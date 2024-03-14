@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { carouselBanners } from "../constant";
 
 export const Home = () => {
+  console.log(carouselBanners);
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
 
   useEffect(() => {
@@ -34,10 +35,10 @@ export const Home = () => {
       </div>
       <div className="absolute mt-[-30rem] w-full">
         <div className="flex flex-col justify-center items-center">
-          <div className="text-white text-5xl">
+          <div className="text-white text-5xl font-bold">
             Jangkauan Global, Sentuhan Lokal
           </div>
-          <div className="text-white mt-[2rem]">
+          <div className="text-white mt-[2rem] text-md">
             Jaringan Luas, Pelayanan Dekat - Distribusi Oli dan Sparepart ke
             Seluruh Indonesia
           </div>
