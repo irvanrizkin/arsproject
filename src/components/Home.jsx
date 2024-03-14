@@ -17,6 +17,10 @@ export const Home = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const handleButtonClick = (index) => {
+    setCurrentBannerIndex(index);
+  };
+
   return (
     <div className="relative">
       <div>
@@ -46,16 +50,26 @@ export const Home = () => {
       </div>
       <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 mt-[10rem] text-black text-4xl w-[50%]">
         <div className="flex text-white w-full">
-          <div className="flex text-3xl border-2 w-[50px] h-[50px] rounded-full backdrop-blur-sm items-center justify-center">
+          <button
+            className="flex text-3xl border-2 w-[50px] h-[50px] rounded-full backdrop-blur-sm items-center justify-center"
+            onClick={() => handleButtonClick(0)}
+          >
             01
-          </div>
+          </button>
           <div className="h-0.5 w-10 bg-gray-300 backdrop-blur-sm"></div>
-          <div className="flex text-3xl border-2 w-[50px] h-[50px] rounded-full backdrop-blur-sm items-center justify-center">
+          <button
+            className="flex text-3xl border-2 w-[50px] h-[50px] rounded-full backdrop-blur-sm items-center justify-center"
+            onClick={() => handleButtonClick(1)}
+          >
             02
-          </div>
-          <div className="flex text-3xl border-2 w-[50px] h-[50px] rounded-full backdrop-blur-sm items-center justify-center">
+          </button>
+          <div className="h-0.5 w-10 bg-gray-300 backdrop-blur-sm"></div>
+          <button
+            className="flex text-3xl border-2 w-[50px] h-[50px] rounded-full backdrop-blur-sm items-center justify-center"
+            onClick={() => handleButtonClick(2)}
+          >
             03
-          </div>
+          </button>
         </div>
       </div>
     </div>

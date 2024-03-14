@@ -17,7 +17,6 @@ export const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   });
-  console.log(navItems);
   return (
     <header className="w-full fixed top-0 left-0 right-0 text-white bg-white md:bg-transparent z-20">
       <nav
