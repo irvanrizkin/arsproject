@@ -8,6 +8,27 @@ export const Portfolio = () => {
           Pilihan utama untuk Produk Pelumas, Suku Cadang, dan Peralatan
           Industri yang Handal
         </div>
+        <div className="w-[75rem] rounded-xl flex justify-evenly py-10 mt-8 space-x-6">
+          <div className="w-[24rem] h-[10rem] shadow-xl rounded-xl px-8 py-6">
+            <div className="text-xl font-bold">Sejak Tahun 2019</div>
+            <div className="text-gray-400 mt-4 text-sm">
+              Melayani Customer B2B hingga B2C
+            </div>
+          </div>
+          <div className="w-[24rem] h-[10rem] shadow-xl rounded-xl px-8 py-6">
+            <div className="text-xl font-bold">Revinery</div>
+            <div className="text-gray-400 mt-4 text-sm">
+              ENI merupakan Revinery di gempol melalui PT. Alp Petro Industry
+            </div>
+          </div>
+          <div className="w-[24rem] h-[10rem] shadow-xl rounded-xl px-8 py-6">
+            <div className="text-xl font-bold">100+ Product</div>
+            <div className="text-gray-400 mt-4 text-sm">
+              Mempunyai produk untuk seluruh kebutuhan industri dan transportasi
+              anda
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
