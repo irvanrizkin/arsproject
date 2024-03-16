@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { navItems } from "../constant";
-import logo from "../assets/logo.png";
-import logoWarna from "../assets/logoWarna.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
-export const Navbar = () => {
+import logo from "../assets/logo.png";
+import logoWarna from "../assets/logoWarna.png";
+export const Coba = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [navbar, setNavbar] = useState(false);
   useEffect(() => {
@@ -20,42 +20,43 @@ export const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   });
+
   return (
-    <header className="w-full fixed top-0 left-0 right-0 text-white bg-yellow-400 md:bg-transparent z-20">
-      <nav
-        className={`py-10 ${
-          isSticky
-            ? "sticky top-0 left-0 py-2 right-0 border-b text-black bg-white duration-300"
-            : ""
-        }`}
-      >
-        <div className="w-full flex justify-evenly py-2 pr-[9.5rem] z-10">
-          <div className="ml-[6rem]">
+    <div>
+      <div className="w-full fixed top-0 right-0 text-white sm:bg-transparent  z-20">
+        <div
+          className={`flex justify-between px-[2rem] lg:px-[6rem] ${
+            isSticky
+              ? "sticky top-0 left-0 right-0 py-1 border-b text-black bg-white duration-300"
+              : "py-12"
+          }`}
+        >
+          <div className="py-2">
             {isSticky ? (
               <img src={logoWarna} alt="logo" />
             ) : (
               <img src={logo} alt="logo" />
             )}
           </div>
-          <ul className="flex space-x-8 py-4 ml-[25rem]">
+          <nav className="hidden md:flex gap-10 py-2 px-10">
             {navItems.map((item) => (
-              <li key={item.path}>
+              <div key={item.path} className="py-5">
                 <a href={`#${item.path}`}>{item.name}</a>
-              </li>
+              </div>
             ))}
-          </ul>
-          <div>
-            <button className="bg-[#f98801] text-white px-4 py-3 mt-1 ml-5">
-              Hubungi Sekarang
-            </button>
-          </div>
-          <div className="mt-1 text-2xl md:hidden sm:block">
+            <div className="hidden md:block mt-2">
+              <button className="bg-[#f98801] text-white px-8 pt-[13px] pb-[13px] ml-5">
+                Hubungi Sekarang
+              </button>
+            </div>
+          </nav>
+          <div className="mt-4 text-2xl ml-4 md:hidden ">
             <button onClick={() => setNavbar(!navbar)}>
               {navbar ? <IoClose /> : <GiHamburgerMenu />}
             </button>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
   );
 };

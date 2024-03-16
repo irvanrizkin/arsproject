@@ -47,7 +47,7 @@ export const Product = () => {
               <FaArrowRight
                 className={`text-[15.5px] ${
                   productHover ? "ml-5" : "text-5xl"
-                } text-[#f98801] ease-in-out duration-200 mt-2`}
+                } text-[#f98801] ease-in-out duration-200 mt-3`}
               />
               <div
                 className={`absolute mt-[-9px] w-2 h-[2.5px] bg-[#f98801] ${
@@ -81,7 +81,7 @@ export const Product = () => {
               <FaArrowRight
                 className={`text-[15.5px] ${
                   industrialHover ? "ml-5" : "text-5xl"
-                } text-[#f98801] ease-in-out duration-200 mt-2`}
+                } text-[#f98801] ease-in-out duration-200 mt-3`}
               />
               <div
                 className={`absolute mt-[-9px] w-2 h-[2.5px] bg-[#f98801] ${
@@ -116,7 +116,7 @@ export const Product = () => {
               <FaArrowRight
                 className={`text-[15.5px] ${
                   greaseHover ? "ml-5" : "text-5xl"
-                } text-[#f98801] ease-in-out duration-200 mt-2`}
+                } text-[#f98801] ease-in-out duration-200 mt-3`}
               />
               <div
                 className={`absolute mt-[-9px] w-2 h-[2.5px] bg-[#f98801] ${

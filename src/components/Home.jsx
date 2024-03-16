@@ -23,13 +23,14 @@ export const Home = () => {
 
   return (
     <div className="relative">
-      <div>
+      <div className="overflow-hidden relative">
         {carouselBanners.map((banner, index) => (
           <div
-            className="bg-cover bg-no-repeat w-full h-[45rem] brightness-50"
+            className="flex bg-no-repeat w-full h-[45rem] brightness-50 transition-transform ease-in-out duration-500"
             key={banner.id}
             style={{
               backgroundImage: `url(${banner.img})`,
+              transform: `translateX(${-(index - currentBannerIndex) * 100}%)`,
               display: index === currentBannerIndex ? "block" : "none", // Menampilkan hanya gambar yang sesuai dengan indeks saat ini
             }}
           >
@@ -38,8 +39,8 @@ export const Home = () => {
         ))}
       </div>
       <div className="absolute mt-[-30rem] w-full">
-        <div className="flex flex-col justify-center items-center">
-          <div className="text-white text-5xl font-bold">
+        <div className="flex flex-col justify-center items-center px-8 text-center">
+          <div className="text-white text-[2.5rem] lg:text-[3rem] font-bold">
             Jangkauan Global, Sentuhan Lokal
           </div>
           <div className="text-white mt-[2rem] text-md">
