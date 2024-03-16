@@ -3,6 +3,7 @@ import eni from "../assets/eniBarrel.svg";
 import industrialEni from "../assets/industrialEni.svg";
 import greaseEni from "../assets/greaseEni.svg";
 import { useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 export const Product = () => {
   const [productHover, setHover] = useState(false);
   const [industrialHover, setIndustrial] = useState(false);
@@ -20,7 +21,7 @@ export const Product = () => {
           maksimal, keandalan, dan keberhasilan jangka panjang
         </div>
       </div>
-      <div className="absolute bottom-[-12rem] w-[80%]">
+      <div className="absolute bottom-[-14rem] w-[80%]">
         <div className="w-full h-full flex justify-center space-x-6  ">
           <div
             className="w-[40rem] border-b-[0.5rem] hover:border-[#f98801] border-white ease-in-out duration-500 bg-white shadow-xl overflow-hidden flex flex-col"
@@ -33,16 +34,26 @@ export const Product = () => {
                 alt="barrelEni"
                 className={`${
                   productHover ? "scale-125" : "scale-100"
-                } hover:scale-125 ease-in-out duration-500`}
+                } ease-in-out duration-500`}
               />
             </div>
-            <div className="px-6 py-10">
+            <div className="px-6 py-10 relative">
               <div className="text-black font-bold text-2xl mt-3 py-2">
                 Outomotive
               </div>
               <div className="text-gray-400 mt-1">
                 Meningkatkan peforma mesin dan memperpanjang usia kendaraan anda
               </div>
+              <FaArrowRight
+                className={`text-[15.5px] ${
+                  productHover ? "ml-5" : "text-5xl"
+                } text-[#f98801] ease-in-out duration-200 mt-2`}
+              />
+              <div
+                className={`absolute mt-[-9px] w-2 h-[2.5px] bg-[#f98801] ${
+                  productHover ? "w-[1.5rem]" : ""
+                } ease-in-out duration-200`}
+              ></div>
             </div>
             <div className="w-full h-2 hover:bg-[#f98801]"></div>
           </div>
@@ -67,6 +78,16 @@ export const Product = () => {
               <div className="text-gray-400 mt-1">
                 Meningkatkan efisiensi dan produktivitas operasi anda
               </div>
+              <FaArrowRight
+                className={`text-[15.5px] ${
+                  industrialHover ? "ml-5" : "text-5xl"
+                } text-[#f98801] ease-in-out duration-200 mt-2`}
+              />
+              <div
+                className={`absolute mt-[-9px] w-2 h-[2.5px] bg-[#f98801] ${
+                  industrialHover ? "w-[1.5rem]" : ""
+                } ease-in-out duration-200`}
+              ></div>
             </div>
             <div className="w-full h-2 hover:bg-[#f98801]"></div>
           </div>
@@ -92,6 +113,16 @@ export const Product = () => {
                 Melindungi komponen penting dari keausan dan korosi dengan
                 berbagai jenis
               </div>
+              <FaArrowRight
+                className={`text-[15.5px] ${
+                  greaseHover ? "ml-5" : "text-5xl"
+                } text-[#f98801] ease-in-out duration-200 mt-2`}
+              />
+              <div
+                className={`absolute mt-[-9px] w-2 h-[2.5px] bg-[#f98801] ${
+                  greaseHover ? "w-[1.5rem]" : ""
+                } ease-in-out duration-200`}
+              ></div>
             </div>
             <div className="w-full h-2 hover:bg-[#f98801]"></div>
           </div>
