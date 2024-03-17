@@ -25,7 +25,7 @@ export const Coba = () => {
     <div>
       <div className="w-full fixed top-0 right-0 text-white sm:bg-transparent  z-20">
         <div
-          className={`flex justify-between px-[2rem] lg:px-[6rem] ${
+          className={`flex justify-between xl:px-[6rem] lg:px-[3rem] px-8 ${
             isSticky
               ? "sticky top-0 left-0 right-0 py-1 border-b text-black bg-white duration-300"
               : "py-12"
@@ -38,14 +38,14 @@ export const Coba = () => {
               <img src={logo} alt="logo" />
             )}
           </div>
-          <nav className="hidden md:flex lg:gap-5 xl:gap-10 py-2">
+          <nav className="hidden md:flex lg:gap-6 xl:gap-10 py-2">
             {navItems.map((item) => (
               <div key={item.path} className="py-5">
                 <a href={`#${item.path}`}>{item.name}</a>
               </div>
             ))}
             <div className="hidden md:block mt-2">
-              <button className="bg-[#f98801] text-white px-8 pt-[13px] pb-[13px] ml-5">
+              <button className="bg-[#f98801] text-white px-8 pt-[13px] pb-[13px] ml-2">
                 Hubungi Sekarang
               </button>
             </div>
