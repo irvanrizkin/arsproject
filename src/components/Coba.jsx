@@ -38,7 +38,7 @@ export const Coba = () => {
               <img src={logo} alt="logo" />
             )}
           </div>
-          <nav className="hidden md:flex lg:gap-6 xl:gap-10 py-2">
+          <nav className="hidden md:flex md:gap-3 md:text-sm lg:gap-6 xl:gap-10 py-2">
             {navItems.map((item) => (
               <div key={item.path} className="py-5">
                 <a href={`#${item.path}`}>{item.name}</a>
