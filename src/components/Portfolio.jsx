@@ -3,7 +3,7 @@ import indicatorLg from "../assets/indicatorLg.png";
 import pipeLg from "../assets/pipeLg.png";
 export const Portfolio = () => {
   return (
-    <div className="w-full  mt-[12rem] py-[8rem]">
+    <div className="w-full mt-2 px-4  lg:mt-[12rem] py-[8rem]">
       <div className="flex flex-col justify-center items-center ">
         <div className="text-[#f98801] text-xl font-bold">Layanan kami</div>
         <div className="text-5xl font-bold mt-5">Portfolio Kami</div>
@@ -11,7 +11,7 @@ export const Portfolio = () => {
           Pilihan utama untuk Produk Pelumas, Suku Cadang, dan Peralatan
           Industri yang Handal
         </div>
-        <div className="w-[75rem] rounded-xl flex justify-evenly py-10 mt-8 space-x-6">
+        <div className="w-full rounded-xl flex flex-row justify-evenly py-10 mt-8 lg:px-[4rem]">
           <div className="w-[24rem] shadow-xl rounded-xl px-8 py-10">
             <img src={facto} alt="facto" />
             <div className="text-xl font-bold mt-5">Sejak Tahun 2019</div>
