@@ -16,7 +16,7 @@ function App() {
       {/* <TestNavbar/> */}
       {/* <Navbar/> */}
       <Home/>
-      <About/>
+      {/* <About/> */}
       {/* <Portfolio/> */}
       {/* <Product/> */}
       {/* <Quotes/> */}
