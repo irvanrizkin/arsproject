@@ -80,7 +80,7 @@ export const Quotes = () => {
           </ul>
         </div>
         <div
-          className=" hidden desktop:flex justify-center desktop:absolute top-[-1rem] desktop:right-[5rem] widescreen:right-[8rem] desktop:w-[15rem] desktop:h-[27.5rem] widescreen:w-[20rem] widescreen:h-[36rem] bg-cover bg-center z-10"
+          className=" hidden desktop:flex justify-center desktop:absolute top-[-1rem] widescreen:top-[-4rem] desktop:right-[5rem] widescreen:right-[8rem] desktop:w-[15rem] desktop:h-[27.5rem] widescreen:w-[20rem] widescreen:h-[40rem] bg-cover bg-center z-10"
           style={{ backgroundImage: `url(${seaMining})` }}
         ></div>
       </div>
