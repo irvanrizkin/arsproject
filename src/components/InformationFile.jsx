@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { infoProfile } from "../constant";
 
 export const InformationFile = () => {
   const containerRef = useRef(null);
+  const [showPic, setPic] = useState(false);
 
   const handleScroll = (direction) => {
     const scrollAmount = 400; // Ubah sesuai kebutuhan Anda
@@ -27,6 +28,10 @@ export const InformationFile = () => {
       <div className="mt-[6rem] px-5">
         <div className="text-primary">Laporan</div>
         <div className="text-2xl">Informasi Lainnya</div>
+        <div className="text-greys mt-5">
+          Kenali kami lebih dalam melalui profile perusahaan kami. Dapatkan
+          seluruh list produk kami. Unduh sekarang untuk informasi lebih lanjut!
+        </div>
       </div>
       <div
         className="relative overflow-hidden py-3"
@@ -37,12 +42,23 @@ export const InformationFile = () => {
           {infoProfile.map((info, index) => (
             <div
               key={index}
-              className="bg-white m-4 shadow-xl"
+              className="bg-white m-4 shadow-xl border-b-[0.5rem] hover:border-primary ease-in-out duration-500 border-white"
               style={{ minWidth: "14rem" }}
+              onMouseEnter={() => setPic(true)}
+              onMouseLeave={() => setPic(false)}
             >
-              <div className="px-5 py-5">
-                <img src={info.img} alt="infoListImage" />
+              <div className="px-5 py-5 ">
+                <img
+                  src={info.img}
+                  alt="infoListImage"
+                  className={`${
+                    showPic ? "scale-125" : "scale-100"
+                  } ease-in-out duration-500`}
+                />
                 <h2 className="text-xl font-semibold mt-4">{info.title}</h2>
+                <button className="text-greys border-b-[1px]">
+                  Download File Pdf
+                </button>
               </div>
             </div>
           ))}
