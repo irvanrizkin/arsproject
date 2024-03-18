@@ -1,4 +1,4 @@
-import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry} from "../assets"
+import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro } from "../assets"
 export const carouselBanners = [
     {
         id : '01',
@@ -71,4 +71,18 @@ export const guideList = [
         title: 'Membedayakan Karyawan',
         desc: 'Kami percaya dalam memberdayakan karyawan dengan pengetahuan, alat, & kesempatan'
     }
+]
+
+export const infoProfile = [
+    {
+        img: catalogue,
+        alt: 'catalogue',
+        title: 'Download Our Catalogue Product',
+    },
+    {
+        img: corpro,
+        alt: 'corpro',
+        title: 'Download Our Company Profile',
+    },
+
 ]

@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { guideList } from "../constant";
+import { infoProfile } from "../constant";
 
-export const GuideLines = () => {
+export const InformationFile = () => {
   const containerRef = useRef(null);
 
   const handleScroll = (direction) => {
@@ -25,8 +25,8 @@ export const GuideLines = () => {
   return (
     <>
       <div className="mt-[6rem] px-5">
-        <div className="text-primary">Pedoman</div>
-        <div className="text-2xl">Apa yang kami yakini</div>
+        <div className="text-primary">Laporan</div>
+        <div className="text-2xl">Informasi Lainnya</div>
       </div>
       <div
         className="relative overflow-hidden py-3"
@@ -34,16 +34,15 @@ export const GuideLines = () => {
         ref={containerRef}
       >
         <div className="flex">
-          {guideList.map((guide, index) => (
+          {infoProfile.map((info, index) => (
             <div
               key={index}
-              className="bg-gray-200 m-4 shadow-xl"
+              className="bg-white m-4 shadow-xl"
               style={{ minWidth: "14rem" }}
             >
               <div className="px-5 py-5">
-                <img src={guide.img} alt="guideListImage" />
-                <h2 className="text-xl font-semibold mt-4">{guide.title}</h2>
-                <p className="mt-4 text-md text-gray-400">{guide.desc}</p>
+                <img src={info.img} alt="infoListImage" />
+                <h2 className="text-xl font-semibold mt-4">{info.title}</h2>
               </div>
             </div>
           ))}
