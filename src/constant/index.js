@@ -21,11 +21,11 @@ export const carouselBanners = [
 ]
 export const navItems = [{
     name : 'Home',
-    path : 'home',
+    path : '/',
 },
 {
     name : 'Tentang Kami',
-    path : 'tentangkami'
+    path : '/about'
 },
 {
     name : 'Produk',
@@ -33,7 +33,7 @@ export const navItems = [{
 },
 {
     name : 'Hubungi Kami',
-    path : 'kontak'
+    path : '/contact'
 },
 {
     name : 'ID | EN',

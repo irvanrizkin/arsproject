@@ -1,25 +1,19 @@
-
-import { About } from './components/About';
+import { Route, Routes } from 'react-router-dom';
 import { Coba } from './components/Coba';
 import { Home } from './components/Home';
-import { Navbar } from './components/Navbar';
-import { Portfolio } from './components/Portfolio';
-import { Product } from './components/Product';
-import { Quotes } from './components/Quotes';
-import { TestNavbar } from './components/TestNavbar';
-import './index.css'
+import { PageAbout} from './Pages/PageAbout';
+import { PageContact } from './Pages/PageContact';
 
 function App() {
   return (
     <div className="App">
       <Coba/>
-      {/* <TestNavbar/> */}
-      {/* <Navbar/> */}
-      <Home/>
-      <About/>
-      <Portfolio/>
-      <Product/>
-      <Quotes/>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/about' element={<PageAbout/>}></Route>
+        <Route path='/contact' element={<PageContact/>}></Route>
+
+      </Routes>
     </div>
   );
 }

@@ -23,9 +23,9 @@ export const Coba = () => {
 
   return (
     <div>
-      <div className="w-full fixed top-0 right-0 text-white sm:bg-transparent  z-20">
+      <div className="w-full fixed top-0 right-0 text-white mobile:bg-transparent  z-20">
         <div
-          className={`flex justify-between xl:px-[6rem] lg:px-[3rem] px-8 ${
+          className={`flex justify-between widescreen:px-[6rem] desktop:px-[3rem] px-8 ${
             isSticky
               ? "sticky top-0 left-0 right-0 py-1 border-b text-black bg-white duration-300"
               : "py-12"
@@ -38,19 +38,19 @@ export const Coba = () => {
               <img src={logo} alt="logo" />
             )}
           </div>
-          <nav className="hidden md:flex md:gap-3 md:text-sm lg:gap-6 xl:gap-10 py-2">
+          <nav className="hidden tablet:flex tablet:gap-3 tablet:text-sm desktop:gap-6 widescreen:gap-10 py-2">
             {navItems.map((item) => (
               <div key={item.path} className="py-5">
-                <a href={`#${item.path}`}>{item.name}</a>
+                <a href={`${item.path}`}>{item.name}</a>
               </div>
             ))}
-            <div className="hidden md:block mt-2">
-              <button className="bg-[#f98801] text-white px-8 pt-[13px] pb-[13px] ml-2">
+            <div className="hidden tablet:block mt-2">
+              <button className="bg-primary text-white px-8 pt-[13px] pb-[13px] ml-2">
                 Hubungi Sekarang
               </button>
             </div>
           </nav>
-          <div className="mt-4 text-2xl ml-4 md:hidden ">
+          <div className="mt-5 text-2xl ml-4 tablet:hidden ">
             <button onClick={() => setNavbar(!navbar)}>
               {navbar ? <IoClose /> : <GiHamburgerMenu />}
             </button>
