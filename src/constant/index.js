@@ -2,7 +2,7 @@ import {background2, factory, mining, indicatorLg, man, oilMachine, ship, indust
 export const carouselBanners = [
     {
         id : '01',
-        img : background2,
+        img : mining,
         alt : 'background2',
         title : 'Jaringan Seluruh Indonesia'
     },
@@ -10,13 +10,15 @@ export const carouselBanners = [
         id : '02',
         img : factory,
         alt : 'sunset',
-        title : 'Integritas'
+        title : 'Keutamaan Integritas',
+        desc : 'Bersama Menjaga Integritas dan Komitmen Kepada Seluruh'
     },
     {
         id : '03',
-        img : mining,
-        alt : 'sunset',
-        title : 'Integritas'
+        img : background2,
+        alt : 'background2',
+        title : 'Terstandarisasi ENI',
+        desc : 'Menjaga Kualitas Produk dan Pelayanan Kami kepada Customer'
     }
 ]
 export const navItems = [{

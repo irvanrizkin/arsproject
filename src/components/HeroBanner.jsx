@@ -26,7 +26,7 @@ export const HeroBanner = () => {
       <div className="overflow-hidden relative">
         {carouselBanners.map((banner, index) => (
           <div
-            className="flex bg-no-repeat w-full h-[45rem] brightness-50 transition-transform ease-in-out duration-500"
+            className="flex bg-no-repeat w-full justify-center items-center h-[45rem] brightness-50 transition-transform ease-in-out duration-500"
             key={banner.id}
             style={{
               backgroundImage: `url(${banner.img})`,
@@ -35,6 +35,7 @@ export const HeroBanner = () => {
             }}
           >
             <h1>{banner.title}</h1>
+            <p>{banner.desc}</p>
           </div>
         ))}
       </div>
