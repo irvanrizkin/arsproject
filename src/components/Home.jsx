@@ -1,6 +1,7 @@
 import { About } from "./About";
-import { CopyRights } from "./CopyRights";
-import { Footer } from "./Footer";
+import { CopyRights } from "./Footer/CopyRights";
+
+import { Footer } from "./Footer/Footer";
 import { GuideLines } from "./GuideLines";
 import { HeroBanner } from "./HeroBanner";
 import { InformationFile } from "./InformationFile";

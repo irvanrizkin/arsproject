@@ -1,5 +1,5 @@
-import logoColor from "../assets/logoWarna.png";
-import mapsLocation from "../assets/mapsLocation.svg";
+import logoColor from "../../assets/logoWarna.png";
+import mapsLocation from "../../assets/mapsLocation.svg";
 export const Footer = () => {
   return (
     <div className="bg-[#fef2e6] mt-[12rem] py-10 px-4">
@@ -31,9 +31,9 @@ export const Footer = () => {
           <div>Lantai 5 Unit i.1 Jl. S. Parman Kav 22-24,</div>
           <div>001/004, Palmerah, Jakarta Barat, 11480</div>
         </div>
-      </div>
-      <div className="flex justify-center items-center mt-4">
-        <img src={mapsLocation} alt="location" />
+        <div className="flex justify-center items-center mt-4">
+          <img src={mapsLocation} alt="location" />
+        </div>
       </div>
     </div>
   );
