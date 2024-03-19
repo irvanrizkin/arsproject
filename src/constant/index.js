@@ -4,7 +4,8 @@ export const carouselBanners = [
         id : '01',
         img : mining,
         alt : 'background2',
-        title : 'Jaringan Seluruh Indonesia'
+        title : 'Jangkauan Global, Sentuhan Lokal',
+        desc : 'Jaringan Luas, Pelayanan Dekat - Distribusi Oli dan Sparepart ke Seluruh Indonesia'
     },
     {
         id : '02',
