@@ -21,7 +21,7 @@ export const Service = () => {
             dan kelestarian
           </div>
         </div>
-        <div className="border-b-2 lg:border-b-0 tablet:mt-5 desktop:border-r-2 desktop:px-6 pb-8 border-gray-100  desktop:w-[50rem]">
+        <div className="border-b-2 desktop:border-b-0 tablet:mt-5 desktop:border-r-2 desktop:px-6 pb-8 border-gray-100  desktop:w-[50rem]">
           <img src={solar} alt="solar" />
           <div className="text-xl hidden tablet:block font-bold mt-6 desktop:text-[16px] widescreen:text-xl">
             Perlindungan Total
