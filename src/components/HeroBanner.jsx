@@ -53,7 +53,7 @@ export const HeroBanner = () => {
         ))}
       </div>
 
-      <div className="absolute top-[50%] mt-[10rem] text-black text-4xl w-[100%] flex desktop:flex-col justify-center items-center">
+      <div className="absolute top-[50%] mt-[10rem] widescreen:mt-[2rem] text-black text-4xl w-[100%] flex desktop:flex-col justify-center items-center">
         <div className="flex text-white">
           <button
             className={`flex text-2xl border-2 w-[50px] h-[50px] p-7 rounded-full ${
@@ -65,7 +65,7 @@ export const HeroBanner = () => {
           >
             01
           </button>
-          <div className="h-0.5 w-10 tablet:w-[6rem] desktop:w-[15rem] bg-gray-300 mt-7 backdrop-blur-sm"></div>
+          <div className="h-0.5 w-10 tablet:w-[6rem] desktop:w-[15rem] widescreen:w-[20rem] bg-gray-300 mt-7 backdrop-blur-sm"></div>
           <button
             className={`flex text-2xl border-2 w-[50px] p-7 h-[50px] rounded-full ${
               currentBannerIndex === 1
@@ -76,7 +76,7 @@ export const HeroBanner = () => {
           >
             02
           </button>
-          <div className="h-0.5 w-10 tablet:w-[6rem] desktop:w-[15rem] mt-7 bg-gray-300 backdrop-blur-sm"></div>
+          <div className="h-0.5 w-10 tablet:w-[6rem] desktop:w-[15rem] widescreen:w-[20rem] mt-7 bg-gray-300 backdrop-blur-sm"></div>
           <button
             className={`flex text-2xl border-2 w-[50px] p-7 h-[50px] rounded-full ${
               currentBannerIndex === 2
@@ -88,24 +88,24 @@ export const HeroBanner = () => {
             03
           </button>
         </div>
-        <div className=" hidden desktop:flex  text-white w-full px-[9rem] items-center mt-[0.1rem] ml-10 widescreen:justify-center">
+        <div className=" hidden desktop:flex  text-white w-full px-[9rem] items-center mt-[0.1rem] ml-10 widescreen:ml-[1rem] widescreen:justify-center">
           <div
-            className={`text-[12px] widescreen:ml-[-1rem]  ${
-              currentBannerIndex === 0 ? "text-primary" : "text-white"
+            className={`text-[12px] widescreen:ml-[-1rem] widescreen:text-[18px]   ${
+              currentBannerIndex === 0 ? "text-primary" : "text-greys"
             }`}
           >
-            Jaringan yang luas
+            Jaringan Seluruh Indonesia
           </div>
           <div
-            className={`text-[12px] ml-[10rem] widescreen:ml-[11rem] ${
-              currentBannerIndex === 1 ? "text-primary" : "text-white"
+            className={`text-[12px] ml-[10rem] widescreen:ml-[10rem] widescreen:text-[18px] ${
+              currentBannerIndex === 1 ? "text-primary" : "text-greys"
             }`}
           >
             Integritas dan kepercayaan
           </div>
           <div
-            className={`text-[12px] ml-[10rem] ${
-              currentBannerIndex === 2 ? "text-primary" : "text-white"
+            className={`text-[12px] ml-[10rem] widescreen:text-[18px] widescreen:ml-[12rem] ${
+              currentBannerIndex === 2 ? "text-primary" : "text-greys"
             }`}
           >
             Kualitas Produk Unggul
