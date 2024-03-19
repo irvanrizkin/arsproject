@@ -1,4 +1,6 @@
 import { About } from "./About";
+import { CopyRights } from "./CopyRights";
+import { Footer } from "./Footer";
 import { GuideLines } from "./GuideLines";
 import { HeroBanner } from "./HeroBanner";
 import { InformationFile } from "./InformationFile";
@@ -18,6 +20,8 @@ export const Home = () => {
       <GuideLines />
       <InformationFile />
       <Notes />
+      <Footer />
+      <CopyRights />
     </>
   );
 };

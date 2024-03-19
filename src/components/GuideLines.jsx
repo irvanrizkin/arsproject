@@ -24,12 +24,31 @@ export const GuideLines = () => {
 
   return (
     <>
-      <div className="mt-[6rem] px-5">
+      <div className="mt-[6rem] px-5 desktop:items-center desktop:flex desktop:flex-col">
         <div className="text-primary">Pedoman</div>
-        <div className="text-2xl">Apa yang kami yakini</div>
+        <div className="text-2xl desktop:text-4xl font-semibold">
+          Apa yang kami yakini
+        </div>
+      </div>
+      <div>
+        <div className=" grid-cols-3 gap-4 justify-items-center px-[8rem] hidden desktop:grid">
+          {guideList.map((guide, index) => (
+            <div
+              key={index}
+              className="bg-gray-200 m-4 shadow-xl"
+              style={{ minWidth: "14rem" }}
+            >
+              <div className="px-5 py-5">
+                <img src={guide.img} alt="guideListImage" />
+                <h2 className="text-xl font-semibold mt-4">{guide.title}</h2>
+                <p className="mt-4 text-md text-gray-400">{guide.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <div
-        className="relative overflow-hidden py-3"
+        className="relative overflow-hidden py-3 desktop:hidden"
         style={{ scrollBehavior: "smooth" }}
         ref={containerRef}
       >
@@ -49,7 +68,7 @@ export const GuideLines = () => {
           ))}
         </div>
       </div>
-      <div className="flex absolute gap-5 mt-4 ml-[6rem]">
+      <div className="flex absolute gap-5 mt-4 ml-[6rem] desktop:hidden">
         <button
           className="border-2 px-3 py-3 border-primary"
           onClick={() => handleScroll("backward")}

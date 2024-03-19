@@ -88,23 +88,23 @@ export const HeroBanner = () => {
             03
           </button>
         </div>
-        <div className=" hidden desktop:flex text-white w-full px-10 items-center justify-evenly mt-4 ml-10 space-x-[2rem]">
+        <div className=" hidden desktop:flex  text-white w-full px-[9rem] items-center mt-[0.1rem] ml-10 widescreen:justify-center">
           <div
-            className={`text-sm ${
+            className={`text-[12px] widescreen:ml-[-1rem]  ${
               currentBannerIndex === 0 ? "text-primary" : "text-white"
             }`}
           >
             Jaringan yang luas
           </div>
           <div
-            className={`text-sm ${
+            className={`text-[12px] ml-[10rem] widescreen:ml-[11rem] ${
               currentBannerIndex === 1 ? "text-primary" : "text-white"
             }`}
           >
             Integritas dan kepercayaan
           </div>
           <div
-            className={`text-sm ${
+            className={`text-[12px] ml-[10rem] ${
               currentBannerIndex === 2 ? "text-primary" : "text-white"
             }`}
           >
