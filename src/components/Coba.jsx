@@ -4,9 +4,20 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import logo from "../assets/logo.png";
 import logoWarna from "../assets/logoWarna.png";
+import { HamburgerMenu } from "./HamburgerMenu";
+import { useLocation } from "react-router-dom";
 export const Coba = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [navbar, setNavbar] = useState(false);
+  const [isAboutActive, setIsAboutActive] = useState(false);
+  const [isHomeActive, setIsHomeActive] = useState(false);
+  const [isContactActive, setIsContactActive] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    setIsAboutActive(location.pathname === "/about");
+    setIsHomeActive(location.pathname === "/");
+    setIsContactActive(location.pathname === "/contact");
+  }, [location.pathname]);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -31,7 +42,7 @@ export const Coba = () => {
               : "py-12"
           }`}
         >
-          <div className="py-2">
+          <div className={`py-2 ${navbar ? "hidden" : "block"}`}>
             {isSticky ? (
               <img src={logoWarna} alt="logo" />
             ) : (
@@ -41,7 +52,23 @@ export const Coba = () => {
           <nav className="hidden tablet:flex tablet:gap-3 tablet:text-sm desktop:gap-6 widescreen:gap-10 py-2">
             {navItems.map((item) => (
               <div key={item.path} className="py-5">
-                <a href={`${item.path}`}>{item.name}</a>
+                <a
+                  href={`${item.path}`}
+                  className={`${
+                    isAboutActive && item.path === "/about"
+                      ? "text-primary"
+                      : ""
+                  }
+                    ${
+                      isHomeActive && item.path === "/" ? "text-primary" : ""
+                    } ${
+                    isContactActive && item.path === "/contact"
+                      ? "text-primary"
+                      : ""
+                  }`}
+                >
+                  {item.name}
+                </a>
               </div>
             ))}
             <div className="hidden tablet:block mt-2">
@@ -52,10 +79,11 @@ export const Coba = () => {
           </nav>
           <div className="mt-5 text-2xl ml-4 tablet:hidden ">
             <button onClick={() => setNavbar(!navbar)}>
-              {navbar ? <IoClose /> : <GiHamburgerMenu />}
+              {navbar ? "" : <GiHamburgerMenu size={30} />}
             </button>
           </div>
         </div>
+        <HamburgerMenu navbar={navbar} setNavbar={setNavbar} />
       </div>
     </div>
   );

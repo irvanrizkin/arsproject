@@ -1,4 +1,4 @@
-import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro } from "../assets"
+import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi } from "../assets"
 export const carouselBanners = [
     {
         id : '01',
@@ -87,5 +87,22 @@ export const infoProfile = [
         alt: 'corpro',
         title: 'Download Our Company Profile',
     },
+]
 
+export const ourGrup = [
+    {
+        img: brs,
+        alt: 'brs',
+        // title: 'BRS',
+    },
+    {
+        img: eniDistributor,
+        alt: 'eniDistributor',
+        // title: 'ENI Distributor',
+    },
+    {
+        img: prixbi,
+        alt: 'prixbi',
+        // title: 'PrixBI',
+    }
 ]

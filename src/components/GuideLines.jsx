@@ -30,17 +30,16 @@ export const GuideLines = () => {
           Apa yang kami yakini
         </div>
       </div>
-      <div>
-        <div className=" grid-cols-3 gap-4 justify-items-center px-[8rem] hidden desktop:grid">
+      <div className="dekstop:flex">
+        <div className="px-[8rem] py-5 desktop:px-[5rem] desktop:w-[full]  hidden desktop:flex desktop:flex-wrap desktop:justify-center desktop:items-center">
           {guideList.map((guide, index) => (
             <div
               key={index}
-              className="bg-gray-200 m-4 shadow-xl"
-              style={{ minWidth: "14rem" }}
+              className="bg-gray-200 m-4 shadow-xl w-[16rem] h-[22rem] pr-[8px]"
             >
-              <div className="px-5 py-5">
-                <img src={guide.img} alt="guideListImage" />
-                <h2 className="text-xl font-semibold mt-4">{guide.title}</h2>
+              <div className="px-5 py-10 ">
+                <img src={guide.img} alt="guideListImage" className="mb-4 " />
+                <h2 className="text-xl font-semibold mt-5">{guide.title}</h2>
                 <p className="mt-4 text-md text-gray-400">{guide.desc}</p>
               </div>
             </div>
