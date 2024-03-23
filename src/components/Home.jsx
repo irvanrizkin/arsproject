@@ -2,6 +2,7 @@ import { About } from "./About";
 import { CopyRights } from "./Footer/CopyRights";
 
 import { Footer } from "./Footer/Footer";
+import { Gallery } from "./Gallery";
 import { GuideLines } from "./GuideLines";
 import { HeroBanner } from "./HeroBanner";
 import { InformationFile } from "./InformationFile";
@@ -21,6 +22,7 @@ export const Home = () => {
       <GuideLines />
       <InformationFile />
       <Notes />
+      <Gallery />
       <Footer />
       <CopyRights />
     </>

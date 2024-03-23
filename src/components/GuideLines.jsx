@@ -35,12 +35,20 @@ export const GuideLines = () => {
           {guideList.map((guide, index) => (
             <div
               key={index}
-              className="bg-gray-200 m-4 shadow-xl w-[16rem] h-[22rem] pr-[8px]"
+              className="bg-gray-200 m-4 shadow-xl w-[16rem] h-[22rem] widescreen:w-[20rem] pr-[10px]"
             >
               <div className="px-5 py-10 ">
-                <img src={guide.img} alt="guideListImage" className="mb-4 " />
-                <h2 className="text-xl font-semibold mt-5">{guide.title}</h2>
-                <p className="mt-4 text-md text-gray-400">{guide.desc}</p>
+                <div className=" h-[4rem]">
+                  <img src={guide.img} alt="guideListImage" className="mb-4 " />
+                </div>
+                <h2 className="text-xl widescreen:text-3xl font-semibold mt-5  h-[4rem]">
+                  {guide.title}
+                </h2>
+                <div className="pr-[13px]">
+                  <p className="mt-4 widescreen:mt-6 text-md text-gray-400">
+                    {guide.desc}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

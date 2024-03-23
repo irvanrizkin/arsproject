@@ -26,7 +26,7 @@ export const Product = () => {
       <div className="absolute mt-[15rem] px-4 py-[2rem] desktop:px-[5rem]">
         <div className="w-full h-full flex flex-col desktop:flex-row justify-center desktop:space-x-4 desktop:mt-[7rem]">
           <div
-            className="desktop:w-[40%] bg-white border-b-[0.5rem] hover:border-[#f98801] border-white ease-in-out duration-500 shadow-xl overflow-hidden flex flex-col"
+            className="desktop:w-[40%] bg-white border-b-[0.5rem] hover:border-[#f98801] hover:cursor-pointer border-white ease-in-out duration-500 shadow-xl overflow-hidden flex flex-col"
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           >
@@ -60,7 +60,7 @@ export const Product = () => {
             <div className="w-full h-2 hover:bg-[#f98801]"></div>
           </div>
           <div
-            className="desktop:w-[40%] bg-white border-b-[0.5rem] hover:border-[#f98801] border-white ease-in-out duration-500 shadow-xl overflow-hidden flex flex-col"
+            className="desktop:w-[40%] bg-white border-b-[0.5rem] hover:border-[#f98801] hover:cursor-pointer border-white ease-in-out duration-500 shadow-xl overflow-hidden flex flex-col"
             onMouseEnter={() => setIndustrial(true)}
             onMouseLeave={() => setIndustrial(false)}
           >
@@ -94,7 +94,7 @@ export const Product = () => {
             <div className="w-full h-2 hover:bg-[#f98801]"></div>
           </div>
           <div
-            className="desktop:w-[40%] bg-white border-b-[0.5rem] hover:border-[#f98801] border-white ease-in-out duration-500 shadow-xl overflow-hidden flex flex-col"
+            className="desktop:w-[40%] bg-white border-b-[0.5rem] hover:border-[#f98801] hover:cursor-pointer border-white ease-in-out duration-500 shadow-xl overflow-hidden flex flex-col"
             onMouseEnter={() => setGrease(true)}
             onMouseLeave={() => setGrease(false)}
           >
