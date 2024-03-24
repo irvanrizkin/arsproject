@@ -1,4 +1,4 @@
-import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi } from "../assets"
+import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons } from "../assets"
 export const carouselBanners = [
     {
         id : '01',
@@ -105,4 +105,47 @@ export const ourGrup = [
         alt: 'prixbi',
         // title: 'PrixBI',
     }
+]
+
+export const ourGallery = [
+    {
+        img : galeri,
+        alt : 'galeri'
+    },
+    {
+        img : galeri2,
+        alt : galeri2
+    }
+]
+
+export const visi = [
+    {
+        img : listIcons,
+        alt : 'list',
+        desc : 'Menjadi perusahaan terpercaya yang mampu memenuhi kebutuhan masyarakat akan produk'
+    },
+]
+
+export const misi = [
+    {
+        img : listIcons,
+        alt : 'list',
+        desc : 'Customer puas terhadap mutu product kami, pelayanan purna jual dan selalu memperhatikan kebutuhan Customer.'
+    },
+    {
+        img : listIcons,
+        alt : 'list',
+        desc : 'Tumbuh dan mendominasi pasar khususnya Divisi Marine dan Mining di Seluruh Wilayah Indonesia.'
+    },
+    {
+        img : listIcons,
+        alt : 'list',
+        desc : 'Membangun team dan partner kerja yang punya visi dan misi yang sama, mengetahui tujuannya dalam bekerja.'
+    },
+    {
+        img : listIcons,
+        alt : 'list',
+        desc : 'Memperhatikan dan memberikan keuntungan kepada perusahaan secara maksimal.'
+    },
+
 ]

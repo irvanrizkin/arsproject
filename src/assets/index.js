@@ -11,5 +11,8 @@ import corpro from './corpro.svg'
 import brs from './brs.svg'
 import eniDistributor from './eniDistributor.svg'
 import prixbi from './prixbi.svg'
+import galeri from './galeri.svg'
+import galeri2 from './galeri2.svg'
+import listIcons from "./listIcon.svg"
 
-export { background2, factory, mining, indicatorLg, man, oilMachine, ship,industry, catalogue, corpro, brs, eniDistributor, prixbi }
+export { background2, factory, mining, indicatorLg, man, oilMachine, ship,industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons }
