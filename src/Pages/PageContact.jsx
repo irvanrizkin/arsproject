@@ -6,9 +6,19 @@ export const PageContact = () => {
     <div>
       <div
         style={{ backgroundImage: `url(${bgContact})` }}
-        className="w-full h-[25rem]"
+        className="w-full h-[25rem] px-5 widescreen:px-[10rem] relative"
       >
-        <div>INI PAGE CONTACT</div>
+        <div className="w-[full] relative">
+          <div className="absolute bg-white w-full mt-[20rem] px-7 py-8 rounded-xl shadow-xl">
+            <div className="text-primary">Hubungi Kami</div>
+            <div className="text-4xl font-semibold">Kirimkan Kami Pesan</div>
+            <div className="text-greys mt-4">
+              Kami sangat menghargai kunjungan Anda. Apakah Anda membutuhkan
+              informasi lebih lanjut, memiliki pertanyaan, atau ingin berdiskusi
+              tentang apa pun? Kami siap membantu Anda!
+            </div>
+          </div>
+        </div>
       </div>
       <Footer />
       <CopyRights />
