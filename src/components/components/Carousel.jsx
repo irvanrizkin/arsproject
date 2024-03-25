@@ -31,7 +31,7 @@ export const Carousel = () => {
           {carouselBanners.map((banner, index) => (
             <div
               key={index}
-              className="w-full h-[40rem] bg-cover bg-no-repeat relative"
+              className="w-full h-[45rem] bg-cover bg-no-repeat relative"
               style={{ backgroundImage: `url(${banner.img})` }}
             >
               <div
