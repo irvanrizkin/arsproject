@@ -14,5 +14,6 @@ import prixbi from './prixbi.svg'
 import galeri from './galeri.svg'
 import galeri2 from './galeri2.svg'
 import listIcons from "./listIcon.svg"
+import marineOil from "./industrialEni.svg"
 
-export { background2, factory, mining, indicatorLg, man, oilMachine, ship,industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons }
+export { background2, factory, mining, indicatorLg, man, oilMachine, ship,industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons, marineOil }

@@ -1,5 +1,5 @@
 import { IoIosArrowDown } from "react-icons/io";
-import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons } from "../assets"
+import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons, marineOil } from "../assets"
 export const carouselBanners = [
     {
         id : '01',
@@ -33,7 +33,7 @@ export const navItems = [{
 },
 {
     name : 'Produk',
-    path : '/product',
+    path : '/automotive',
     icon : <IoIosArrowDown/>
 
 },
@@ -45,6 +45,39 @@ export const navItems = [{
     name : 'ID | EN',
     path : 'language'
 }]
+
+export const productList = [
+    {
+        name : "Automotive",
+        path : '/automotive'
+    },
+    {
+        name : "Industrial",
+        path : '/industrial'
+    },
+    {
+        name : "Grease",
+        path : '/grease'
+    },
+]
+export const automotiveProducts = [
+    {
+        type : "Marine Oil",
+        name : "Cladium",
+        img : marineOil
+
+    },
+    {
+        name : "Diesel Oil",
+    },
+    {
+        name : "Gas Engine Oil",
+    },
+    {
+        name : "Transmission & Gear Oil"
+    }
+]
+
 
 export const guideList = [
     {

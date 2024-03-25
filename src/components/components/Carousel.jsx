@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { carouselBanners } from "../constant";
+import { carouselBanners } from "../../constant";
 
 export const Carousel = () => {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);

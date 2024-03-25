@@ -1,5 +1,5 @@
-import { navItems } from "../constant";
-import logoWarna from "../assets/logoWarna.png";
+import { navItems } from "../../constant";
+import logoWarna from "../../assets/logoWarna.png";
 import { IoMdClose } from "react-icons/io";
 export const HamburgerMenu = ({ navbar, setNavbar }) => {
   return (

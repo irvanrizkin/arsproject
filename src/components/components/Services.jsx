@@ -1,6 +1,6 @@
-import indicator from "../assets/indicator.png";
-import solar from "../assets/solar.png";
-import pipe from "../assets/pipe.png";
+import indicator from "../../assets/indicator.png";
+import solar from "../../assets/solar.png";
+import pipe from "../../assets/pipe.png";
 export const Service = () => {
   return (
     <div className="mt-[-5rem] bg-white rounded-xl w-full px-2  py-8 shadow-xl">

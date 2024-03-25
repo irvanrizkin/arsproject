@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { infoProfile } from "../constant";
+import { infoProfile } from "../../constant";
 import { BsFileEarmarkArrowDown } from "react-icons/bs";
 
 export const InformationFile = () => {

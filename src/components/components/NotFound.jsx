@@ -1,6 +1,6 @@
-import notfounds from "../assets/notFounds.svg";
-import { CopyRights } from "./Footer/CopyRights";
-import { Footer } from "./Footer/Footer";
+import notfounds from "../../assets/notFounds.svg";
+import { CopyRights } from "../Footer/CopyRights";
+import { Footer } from "../Footer/Footer";
 export const NotFound = () => {
   return (
     <>

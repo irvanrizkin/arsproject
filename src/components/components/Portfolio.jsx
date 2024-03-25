@@ -1,6 +1,6 @@
-import facto from "../assets/facto.png";
-import indicatorLg from "../assets/indicatorLg.png";
-import pipeLg from "../assets/pipeLg.png";
+import facto from "../../assets/facto.png";
+import indicatorLg from "../../assets/indicatorLg.png";
+import pipeLg from "../../assets/pipeLg.png";
 export const Portfolio = () => {
   return (
     <div className="w-full mt-2 px-4  desktop:mt-[12rem] py-[8rem]">

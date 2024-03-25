@@ -1,5 +1,5 @@
-import seaMining from "../assets/seaFactory.svg";
-import listIcon from "../assets/listIcon.svg";
+import seaMining from "../../assets/seaFactory.svg";
+import listIcon from "../../assets/listIcon.svg";
 export const Quotes = () => {
   return (
     <div className="relative mt-[65rem] desktop:mt-[20rem] widescreen:mt-[25rem] flex flex-col desktop:flex-row py-4 desktop:py-0">

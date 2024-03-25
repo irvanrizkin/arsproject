@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { ourGallery } from "../constant";
+import { ourGallery } from "../../constant";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 export const Gallery = () => {
   const containerRef = useRef(null);

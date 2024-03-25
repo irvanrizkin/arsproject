@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { guideList } from "../constant";
+import { guideList } from "../../constant";
 
 export const GuideLines = () => {
   const containerRef = useRef(null);

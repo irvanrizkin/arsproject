@@ -1,7 +1,7 @@
-import backProduct from "../assets/backProduct.png";
-import eni from "../assets/eniBarrel.svg";
-import industrialEni from "../assets/industrialEni.svg";
-import greaseEni from "../assets/greaseEni.svg";
+import backProduct from "../../assets/backProduct.png";
+import eni from "../../assets/eniBarrel.svg";
+import industrialEni from "../../assets/industrialEni.svg";
+import greaseEni from "../../assets/greaseEni.svg";
 import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 export const Product = () => {

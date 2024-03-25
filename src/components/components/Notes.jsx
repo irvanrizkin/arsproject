@@ -1,5 +1,5 @@
-import dumpTruck from "../assets/dumptruck.svg";
-import ceoPic from "../assets/ceoPic.svg";
+import dumpTruck from "../../assets/dumptruck.svg";
+import ceoPic from "../../assets/ceoPic.svg";
 export const Notes = () => {
   return (
     <>

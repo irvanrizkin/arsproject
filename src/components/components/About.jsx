@@ -1,7 +1,7 @@
+import eni from "../../assets/eni.png";
+import worker from "../../assets/worker.png";
+import workerEni from "../../assets/miningWorker.svg";
 import { Service } from "./Services";
-import eni from "../assets/eni.png";
-import worker from "../assets/worker.png";
-import workerEni from "../assets/miningWorker.svg";
 
 export const About = () => {
   return (

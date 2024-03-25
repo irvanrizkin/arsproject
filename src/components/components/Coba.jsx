@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { navItems } from "../constant";
+import { navItems } from "../../constant";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoClose } from "react-icons/io5";
-import logo from "../assets/logo.png";
-import logoWarna from "../assets/logoWarna.png";
+import logo from "../../assets/logo.png";
+import logoWarna from "../../assets/logoWarna.png";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { useLocation } from "react-router-dom";
+import { productList } from "../../constant";
+
 export const Coba = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [navbar, setNavbar] = useState(false);
@@ -19,7 +20,11 @@ export const Coba = () => {
     setIsAboutActive(location.pathname === "/about");
     setIsHomeActive(location.pathname === "/");
     setIsContactActive(location.pathname === "/contact");
-    setIsProductActive(location.pathname === "/product");
+    setIsProductActive(
+      location.pathname === "/automotive" ||
+        location.pathname === "/industrial" ||
+        location.pathname === "/grease"
+    );
   }, [location.pathname]);
   useEffect(() => {
     const handleScroll = () => {
@@ -78,7 +83,10 @@ export const Coba = () => {
                       ? "text-primary"
                       : ""
                   } ${
-                    isProductActive && item.path === "/product"
+                    isProductActive &&
+                    (item.path === "/automotive" ||
+                      item.path === "/industrial" ||
+                      item.path === "/grease")
                       ? "text-primary"
                       : ""
                   }`}
@@ -94,9 +102,17 @@ export const Coba = () => {
                         : "top-[6rem] text-white"
                     } pl-3 pr-10 py-4 flex flex-col space-y-5 rounded-xl left-50% mt-1 z-10`}
                   >
-                    <a href="/product">Automotive</a>
-                    <a href="/product">Industrial</a>
-                    <a href="/product">Grease</a>
+                    {productList.map((item, index) => {
+                      return (
+                        <a
+                          href={item.path}
+                          key={index}
+                          className="hover:text-primary"
+                        >
+                          {item.name}
+                        </a>
+                      );
+                    })}
                   </div>
                 )}
               </div>
