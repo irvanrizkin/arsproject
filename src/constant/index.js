@@ -1,3 +1,4 @@
+import { IoIosArrowDown } from "react-icons/io";
 import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons } from "../assets"
 export const carouselBanners = [
     {
@@ -32,7 +33,9 @@ export const navItems = [{
 },
 {
     name : 'Produk',
-    path : '/product'
+    path : '/product',
+    icon : <IoIosArrowDown/>
+
 },
 {
     name : 'Hubungi Kami',

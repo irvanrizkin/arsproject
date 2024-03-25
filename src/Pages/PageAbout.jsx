@@ -3,7 +3,6 @@ import { About } from "../components/AboutPages/About";
 import { CopyRights } from "../components/Footer/CopyRights";
 import { Footer } from "../components/Footer/Footer";
 import { OurGroup } from "../components/AboutPages/OurGroup";
-import { Wrapper } from "../components/Wrapper";
 import { VisiMisi } from "../components/AboutPages/VisiMisi";
 export const PageAbout = () => {
   return (

@@ -12,11 +12,14 @@ export const Coba = () => {
   const [isAboutActive, setIsAboutActive] = useState(false);
   const [isHomeActive, setIsHomeActive] = useState(false);
   const [isContactActive, setIsContactActive] = useState(false);
+  const [isProductActive, setIsProductActive] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
   useEffect(() => {
     setIsAboutActive(location.pathname === "/about");
     setIsHomeActive(location.pathname === "/");
     setIsContactActive(location.pathname === "/contact");
+    setIsProductActive(location.pathname === "/product");
   }, [location.pathname]);
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +54,16 @@ export const Coba = () => {
           </div>
           <nav className="hidden tablet:flex tablet:gap-3 tablet:text-sm desktop:gap-6 widescreen:gap-10 py-2">
             {navItems.map((item) => (
-              <div key={item.path} className="py-5">
+              <div
+                key={item.path}
+                className="py-5 flex"
+                onMouseEnter={() =>
+                  item.name === "Produk" && setShowDropdown(true)
+                } // Tampilkan dropdown saat hover
+                onMouseLeave={() =>
+                  item.name === "Produk" && setShowDropdown(false)
+                }
+              >
                 <a
                   href={`${item.path}`}
                   className={`${
@@ -65,10 +77,28 @@ export const Coba = () => {
                     isContactActive && item.path === "/contact"
                       ? "text-primary"
                       : ""
+                  } ${
+                    isProductActive && item.path === "/product"
+                      ? "text-primary"
+                      : ""
                   }`}
                 >
                   {item.name}
                 </a>
+                <div className="ml-2 mt-1">{item.icon}</div>
+                {item.name === "Produk" && showDropdown && (
+                  <div
+                    className={`absolute bg-transparant ${
+                      isSticky
+                        ? "top-[3rem] bg-white text-black"
+                        : "top-[6rem] text-white"
+                    } pl-3 pr-10 py-4 flex flex-col space-y-5 rounded-xl left-50% mt-1 z-10`}
+                  >
+                    <a href="/product">Automotive</a>
+                    <a href="/product">Industrial</a>
+                    <a href="/product">Grease</a>
+                  </div>
+                )}
               </div>
             ))}
             <div className="hidden tablet:block mt-2">

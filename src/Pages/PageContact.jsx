@@ -1,6 +1,7 @@
 import bgContact from "../assets/backContact.svg";
 import { CopyRights } from "../components/Footer/CopyRights";
 import { Footer } from "../components/Footer/Footer";
+import { Forms } from "../components/Forms";
 export const PageContact = () => {
   return (
     <div>
@@ -20,6 +21,7 @@ export const PageContact = () => {
           </div>
         </div>
       </div>
+      <Forms />
       <Footer />
       <CopyRights />
     </div>
