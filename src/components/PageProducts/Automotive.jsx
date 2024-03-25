@@ -4,6 +4,7 @@ import { CopyRights } from "../Footer/CopyRights";
 import { Footer } from "../Footer/Footer";
 import { useLocation } from "react-router-dom";
 import { productList } from "../../constant";
+import { AutomotiveList } from "./AutomotiveList";
 
 export const Automotive = () => {
   const location = useLocation();
@@ -41,6 +42,7 @@ export const Automotive = () => {
             </div>
           </div>
         </div>
+        <AutomotiveList />
         <Footer />
         <CopyRights />
       </div>
