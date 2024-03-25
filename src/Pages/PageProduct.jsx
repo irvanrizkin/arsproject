@@ -14,7 +14,7 @@ export const PageProduct = () => {
             style={{ backdropFilter: "brightness(90%)" }}
           >
             <div className="absolute bg-white w-full mt-[20rem] px-7 py-8 rounded-xl shadow-xl">
-              <div className="text-primary">Hubungi Kami</div>
+              <div className="text-primary">Produk Kami</div>
               <div className="text-4xl font-semibold">Kirimkan Kami Pesan</div>
               <div className="text-greys mt-4">
                 Kami sangat menghargai kunjungan Anda. Apakah Anda membutuhkan
