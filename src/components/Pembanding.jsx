@@ -88,3 +88,57 @@ export const GuideLines = () => {
     </>
   );
 };
+
+// import { useEffect, useState } from "react";
+// import { carouselBanners } from "../constant";
+
+// export const PageProduct = () => {
+//   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+
+//   useEffect(() => {
+//     const intervalId = setInterval(() => {
+//       setCurrentBannerIndex((prevIndex) =>
+//         prevIndex === carouselBanners.length - 1 ? 0 : prevIndex + 1
+//       );
+//     }, 4000);
+
+//     return () => clearInterval(intervalId);
+//   }, []);
+
+//   return (
+//     <>
+//       <div className="relative overflow-hidden">
+//         <div
+//           className="flex transition-transform duration-1000 ease-in-out"
+//           style={{
+//             transform: `translateX(-${currentBannerIndex * 33.33}%)`,
+//             width: `${carouselBanners.length * 100}%`,
+//           }}
+//         >
+//           {carouselBanners.map((banner, index) => (
+//             <div
+//               key={index}
+//               className="w-full h-[40rem] bg-cover bg-no-repeat relative"
+//               style={{ backgroundImage: `url(${banner.img})` }}
+//             >
+//               <div
+//                 className="absolute w-full h-full pt-[15rem] px-4 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center"
+//                 style={{ backdropFilter: "brightness(90%)" }}
+//               >
+//                 <div className="px-2">
+//                   <div className="text-white text-[2.5rem] desktop:text-[3rem] font-bold">
+//                     {banner.title}
+//                   </div>
+//                   <div className="text-white mt-[1rem] text-md">
+//                     {banner.desc}
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//         <div>Product</div>
+//       </div>
+//     </>
+//   );
+// };

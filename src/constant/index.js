@@ -32,7 +32,7 @@ export const navItems = [{
 },
 {
     name : 'Produk',
-    path : 'produk'
+    path : '/product'
 },
 {
     name : 'Hubungi Kami',

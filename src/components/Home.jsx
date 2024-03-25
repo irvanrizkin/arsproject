@@ -1,4 +1,5 @@
 import { About } from "./About";
+import { Carousel } from "./Carousel";
 import { CopyRights } from "./Footer/CopyRights";
 
 import { Footer } from "./Footer/Footer";
@@ -14,7 +15,8 @@ import { Quotes } from "./Quotes";
 export const Home = () => {
   return (
     <>
-      <HeroBanner />
+      {/* <HeroBanner /> */}
+      <Carousel />
       <About />
       <Portfolio />
       <Product />
