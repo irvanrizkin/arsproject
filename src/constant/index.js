@@ -1,5 +1,5 @@
 import { IoIosArrowDown } from "react-icons/io";
-import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons, drumEni, diesel } from "../assets"
+import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons, drumEni, diesel, rotra, multiTech, doubleEniDrums } from "../assets"
 export const carouselBanners = [
     {
         id : '01',
@@ -75,6 +75,119 @@ export const automotiveProducts = [
     }
 ]
 
+export const industrialProduct = [
+    {
+        type : "Hydraulic Oil",
+    },
+    {
+        type : "General Purpose",
+    },
+    {
+        type : "Gear & Chains",
+    },
+    {
+        type : "Heat Transfer Plans",
+    },
+    {
+        type : "Slideways",
+    },
+    {
+        type : "Compressor Oil",
+    },
+    {
+        type : "Turbine Oil",
+    }
+]
+
+export const greaseProduct = [
+    {
+        type : "Multipurpose Grease",
+    },
+    {
+        type : "Speciality Grease",
+    }
+]
+export const multiPurposeGrease = [
+    {
+        name : "MU",
+        img : diesel
+    },
+    {
+        name : "SM",
+        img : diesel
+    },
+]
+export const specialityGrease = [
+    {
+        name : "LC",
+        img : diesel
+    },
+    {
+        name : "SAGUS",
+        img : diesel
+    },
+]
+export const hydraulicOil = [
+    {
+        name : "Arnica",
+        img : doubleEniDrums
+    },
+    {
+        name : "Oso",
+        img : doubleEniDrums
+    },
+]
+
+export const generalPurpose = [
+    {
+        name : "Acer",
+        img : diesel
+    },
+    {
+        name : "Radula",
+        img : doubleEniDrums
+    },
+]
+export const gearChain = [
+    {
+        name : "Blasia",
+        img : diesel
+    },
+    {
+        name : "Arum",
+        img : doubleEniDrums
+    },
+]
+
+export const heatTransferPlans = [
+    {
+        name : "Therm Oil",
+        img : doubleEniDrums
+    },
+]
+
+export const slideWays = [
+    {
+        name : "Exidia",
+        img : doubleEniDrums
+    },
+]
+export const compressorOil = [
+    {
+        name : "Dicrea",
+        img : doubleEniDrums
+    },
+    {
+        name : "Betula",
+        img : doubleEniDrums
+    },
+]
+export const turbineOil = [
+    {
+        name : "OTE",
+        img : doubleEniDrums
+    }
+]
 export const marineOil = [
     {
         name : "Cladium",
@@ -95,6 +208,24 @@ export const dieselOil = [
         img : diesel
     },
 ]
+
+export const gasEngineOil = [
+    {
+        name : "Geum",
+        img : drumEni
+    },
+]
+export const transmissionGearOil = [
+    {
+        name : "Rotra",
+        img : rotra
+    },
+    {
+        name : "MultiTech",
+        img : multiTech
+    },
+]
+
 
 
 export const guideList = [
@@ -167,7 +298,7 @@ export const ourGallery = [
         alt : 'galeri'
     },
     {
-        img : galeri2,
+        img : background2,
         alt : galeri2
     }
 ]

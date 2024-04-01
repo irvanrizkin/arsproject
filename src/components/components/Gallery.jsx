@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
 import { ourGallery } from "../../constant";
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowBack, IoIosClose } from "react-icons/io";
+
 export const Gallery = () => {
   const containerRef = useRef(null);
   const [appear, setAppear] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const handleScroll = (direction) => {
     const scrollAmount = 400; // Ubah sesuai kebutuhan Anda
@@ -21,6 +23,29 @@ export const Gallery = () => {
       });
     }
   };
+
+  const openImagePopup = (index) => {
+    setSelectedImageIndex(index);
+    setAppear(true);
+  };
+
+  const closeImagePopup = () => {
+    setAppear(false);
+    setSelectedImageIndex(null);
+  };
+
+  const handlePopupScroll = (direction) => {
+    if (selectedImageIndex === null) return;
+
+    const scrollAmount = 400;
+    const newIndex =
+      direction === "forward" ? selectedImageIndex + 1 : selectedImageIndex - 1;
+
+    if (newIndex >= 0 && newIndex < ourGallery.length) {
+      setSelectedImageIndex(newIndex);
+    }
+  };
+
   return (
     <>
       <div className="mt-[15rem] px-5">
@@ -30,21 +55,8 @@ export const Gallery = () => {
             Galeri Aktivitas
           </div>
         </div>
-        {/* <div className="dekstop:flex desktop:flex-row">
-          <div className="py-5 bg-yellow-100 desktop:w-[full] hidden desktop:flex desktop:flex-wrap desktop:flex-row justify-between">
-            {ourGallery.map((item, index) => (
-              <div key={index} className="bg-gray-200 shadow-xl ">
-                <div className="px-5 py-10 ">
-                  <div className="">
-                    <img src={item.img} alt="itemListImage" className="mb-4 " />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
         <div
-          className="relative  overflow-hidden"
+          className="relative overflow-hidden"
           style={{ scrollBehavior: "smooth" }}
           ref={containerRef}
         >
@@ -53,8 +65,7 @@ export const Gallery = () => {
               <div
                 key={index}
                 className="m-5 min-w-[15rem] desktop:min-w-[40rem] cursor-pointer relative"
-                onMouseEnter={() => setAppear(true)}
-                onMouseLeave={() => setAppear(false)}
+                onClick={() => openImagePopup(index)}
               >
                 <div className="">
                   <img src={item.img} alt="guideListImage" />
@@ -78,6 +89,39 @@ export const Gallery = () => {
           </button>
         </div>
       </div>
+
+      {/* Popup Gambar */}
+      {appear && selectedImageIndex !== null && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="relative">
+            <img
+              src={ourGallery[selectedImageIndex].img}
+              alt="popupImage"
+              className="max-h-[80vh] max-w-[80vw] object-contain"
+            />
+            <button
+              className="absolute top-0 right-0 m-4 text-white"
+              onClick={closeImagePopup}
+            >
+              <IoIosClose size={40} />
+            </button>
+            <div className="absolute top-1/2 transform -translate-y-1/2 flex gap-5">
+              <button
+                className="border-2 px-3 py-3 border-primary"
+                onClick={() => handlePopupScroll("backward")}
+              >
+                <IoIosArrowBack size={30} className="text-primary" />
+              </button>
+              <button
+                className="border-2 px-3 py-3 border-primary"
+                onClick={() => handlePopupScroll("forward")}
+              >
+                <IoIosArrowForward size={30} className="text-primary" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

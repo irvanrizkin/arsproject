@@ -16,5 +16,8 @@ import galeri2 from './galeri2.svg'
 import listIcons from "./listIcon.svg"
 import drumEni from "./industrialEni.svg"
 import diesel from "./greaseEni.svg"
+import rotra from "./rotra.svg"
+import multiTech from "./multiTech.svg"
+import doubleEniDrums from "./doubleEniDrums.svg"
 
-export { background2, factory, mining, indicatorLg, man, oilMachine, ship,industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons, drumEni, diesel }
+export { background2, factory, mining, indicatorLg, man, oilMachine, ship,industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons, drumEni, diesel, rotra, multiTech, doubleEniDrums }

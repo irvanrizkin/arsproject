@@ -4,6 +4,7 @@ import { CopyRights } from "../Footer/CopyRights";
 import { Footer } from "../Footer/Footer";
 import { useLocation } from "react-router-dom";
 import { productList } from "../../constant";
+import { IndustrialList } from "./IndustrialList";
 
 export const Industrial = () => {
   const location = useLocation();
@@ -12,35 +13,36 @@ export const Industrial = () => {
   );
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Reset scroll position on component mount
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
       <div>
         <div
-          style={{ backgroundImage: `url(${bgProduct})` }}
-          className="w-full h-[25rem] px-5 widescreen:px-[10rem] relative"
+          style={{
+            backgroundImage: `url(${bgProduct})`,
+          }}
+          className="w-full h-[25rem] px-5 bg-cover widescreen:px-[10rem] relative z-0"
         >
           <div
-            className="w-[full] relative "
+            className="absolute w-full h-[25rem] left-0 top-0 bg-black bg-opacity-50 z-10"
             style={{ backdropFilter: "brightness(90%)" }}
-          >
-            <div className="absolute bg-white w-full mt-[20rem] px-7 py-8 rounded-xl shadow-xl">
+          ></div>
+          <div className="w-[full] relative ">
+            <div className="absolute bg-white w-full mt-[20rem] px-7 py-8 rounded-xl shadow-xl z-20">
               <div className="flex gap-3">
                 <div className="text-primary">Produk Kami</div>
                 <div className="text-primary">{">"}</div>
                 <div>{currentProduct ? currentProduct.name : ""}</div>
               </div>
-              <div className="text-4xl font-semibold">Kirimkan Kami Pesan</div>
-              <div className="text-greys mt-4">
-                Kami sangat menghargai kunjungan Anda. Apakah Anda membutuhkan
-                informasi lebih lanjut, memiliki pertanyaan, atau ingin
-                berdiskusi tentang apa pun? Kami siap membantu Anda!
+              <div className="text-4xl font-semibold">
+                {currentProduct ? currentProduct.name : ""}
               </div>
             </div>
           </div>
         </div>
+        <IndustrialList />
         <Footer />
         <CopyRights />
       </div>
