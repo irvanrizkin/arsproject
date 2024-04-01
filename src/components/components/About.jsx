@@ -12,15 +12,15 @@ export const About = () => {
         </div>
         <div className="flex flex-col desktop:flex-row desktop:justify-center justify-center items-center">
           <div className="flex mt-[6rem] relative desktop:w-[50%] justify-center items-center">
-            <div className="absolute h-[10rem] tablet:h-[19rem] tablet:ml-[-28rem]  w-[5rem] tablet:w-[10rem] bg-primary ml-[-17rem] desktop:ml-[-18rem] tablet:mt-[-8.5rem]  mt-[-9.5rem] -z-10"></div>
-            <div className="tablet:hidden desktop:hidden">
+            <div className="absolute h-[10rem] tablet:h-[19rem] tablet:ml-[-28rem] w-[5rem] tablet:w-[10rem] bg-primary ml-[-17rem] desktop:ml-[-18rem] tablet:mt-[-8.5rem] mt-[-9.5rem] -z-10 animate-bg"></div>
+            <div className="tablet:hidden desktop:hidden animate-eni">
               <img src={workerEni} alt="eni" />
             </div>
-            <div className="ml-3 hidden tablet:block desktop:block desktop:ml-10">
+            <div className="ml-3 hidden tablet:block desktop:block desktop:ml-10 animate-eni">
               <img src={eni} alt="eni" />
             </div>
-            <div className="absolute h-[10rem] tablet:h-[15rem] w-[11rem] tablet:w-[20rem] bg-primary ml-[9rem] tablet:ml-[13rem] bottom-[-2rem] -z-10"></div>
-            <div className="absolute hidden tablet:block bg-white bottom-[-0.5rem] left-[6.5rem] desktop:left-[1rem] widescreen:left-[8rem] tablet:left-[-0.5rem] shadow-xl px-12 py-8">
+            <div className="absolute h-[10rem] tablet:h-[15rem] w-[11rem] tablet:w-[20rem] bg-primary ml-[9rem] tablet:ml-[13rem] bottom-[-2rem] -z-10 animate-bg"></div>
+            <div className="absolute hidden tablet:block bg-white bottom-[-0.5rem] left-[6.5rem] desktop:left-[1rem] widescreen:left-[8rem] tablet:left-[-0.5rem] shadow-xl px-12 py-8 animate-company">
               <div className="font-bold">PT. Anugerah Rapri Sejahtera</div>
               <div className="text-gray-400 mt-2">
                 <div>Official ENI Distributor by PT.</div>
