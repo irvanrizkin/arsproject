@@ -89,36 +89,33 @@ export const Gallery = () => {
           </button>
         </div>
       </div>
-
       {/* Popup Gambar */}
       {appear && selectedImageIndex !== null && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="relative">
+          <div className="relative flex items-center justify-center">
+            <button
+              className="absolute left-[-6rem] m-4 text-white z-10 border-2 px-3 py-3 border-primary"
+              onClick={() => handlePopupScroll("backward")}
+            >
+              <IoIosArrowBack size={40} className="text-primary " />
+            </button>
             <img
               src={ourGallery[selectedImageIndex].img}
               alt="popupImage"
-              className="max-h-[80vh] max-w-[80vw] object-contain"
+              className="max-h-[80vh] max-w-[80vw] object-contain z-0"
             />
             <button
-              className="absolute top-0 right-0 m-4 text-white"
+              className="absolute right-[-6rem] m-4 text-white z-10 border-2 px-3 py-3 border-primary"
+              onClick={() => handlePopupScroll("forward")}
+            >
+              <IoIosArrowForward size={40} className="text-primary" />
+            </button>
+            <button
+              className="absolute top-0 right-0 m-4 text-white z-10"
               onClick={closeImagePopup}
             >
               <IoIosClose size={40} />
             </button>
-            <div className="absolute top-1/2 transform -translate-y-1/2 flex gap-5">
-              <button
-                className="border-2 px-3 py-3 border-primary"
-                onClick={() => handlePopupScroll("backward")}
-              >
-                <IoIosArrowBack size={30} className="text-primary" />
-              </button>
-              <button
-                className="border-2 px-3 py-3 border-primary"
-                onClick={() => handlePopupScroll("forward")}
-              >
-                <IoIosArrowForward size={30} className="text-primary" />
-              </button>
-            </div>
           </div>
         </div>
       )}
