@@ -20,7 +20,7 @@ function App() {
         <Route path='/product' element={<PageProduct/>}></Route>
         <Route path='/automotive' element={<Automotive/>}></Route>
         <Route path='/industrial' element={<Industrial/>}></Route>
-        <Route path='/grease' element={<Grease/>}></Route>
+        <Route path='/greases' element={<Grease/>}></Route>
         <Route path='/*' element={<NotFound/>}></Route>
       </Routes>
     </div>

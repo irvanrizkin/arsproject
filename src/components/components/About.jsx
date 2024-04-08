@@ -12,7 +12,7 @@ export const About = () => {
         </div>
         <div className="flex flex-col desktop:flex-row desktop:justify-center justify-center items-center">
           <div className="flex mt-[6rem] relative desktop:w-[50%] justify-center items-center">
-            <div className="absolute h-[10rem] tablet:h-[19rem] tablet:ml-[-28rem] w-[5rem] tablet:w-[10rem] bg-primary ml-[-17rem] desktop:ml-[-18rem] tablet:mt-[-8.5rem] mt-[-9.5rem] -z-10 animate-bg"></div>
+            <div className="absolute h-[8rem] tablet:h-[19rem] widescreen:h-[16rem] tablet:ml-[-28rem] w-[8rem] tablet:w-[10rem] widescreen:w-[18rem] bg-primary ml-[-12rem] desktop:ml-[-18rem] widescreen:ml-[-16rem] tablet:mt-[-8.5rem] mt-[-9.5rem] -z-10 animate-bg"></div>
             <div className="tablet:hidden desktop:hidden animate-eni">
               <img src={workerEni} alt="eni" />
             </div>

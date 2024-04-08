@@ -5,6 +5,7 @@ import { Footer } from "../Footer/Footer";
 import { useLocation } from "react-router-dom";
 import { productList } from "../../constant";
 import { AutomotiveList } from "./AutomotiveList";
+import { Product } from "../components/Product";
 
 export const Automotive = () => {
   const location = useLocation();
@@ -43,8 +44,13 @@ export const Automotive = () => {
           </div>
         </div>
         <AutomotiveList />
-        <Footer />
-        <CopyRights />
+        <div className="mt-[5rem]">
+          <Product />
+        </div>
+        <div className="mt-[20rem]">
+          <Footer />
+          <CopyRights />
+        </div>
       </div>
     </>
   );

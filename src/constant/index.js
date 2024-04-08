@@ -1,5 +1,5 @@
 import { IoIosArrowDown } from "react-icons/io";
-import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons, drumEni, diesel, rotra, multiTech, doubleEniDrums } from "../assets"
+import {background2, factory, mining, indicatorLg, man, oilMachine, ship, industry, catalogue, corpro, brs, eniDistributor, prixbi, galeri, galeri2, listIcons, drumEni, diesel, rotra, multiTech, doubleEniDrums, eniBarrel } from "../assets"
 export const carouselBanners = [
     {
         id : '01',
@@ -57,8 +57,29 @@ export const productList = [
     },
     {
         name : "Grease",
-        path : '/grease'
+        path : '/greases'
     },
+]
+
+export const listListProduct = [
+    {
+        img : eniBarrel,
+        alt : 'eniBarrel',
+        name : 'Automotive',
+        desc : 'Meningkatkan peforma mesin dan memperpanjang usia kendaraan anda'
+    },
+    {
+        img : drumEni,
+        alt : 'industrialEni',
+        name : 'Industrial',
+        desc : 'Meningkatkan efisiensi dan produktivitas operasi anda'
+    },
+    {
+        img : diesel,
+        alt : 'greaseEni',
+        name : 'Greases',
+        desc : 'Melindungi komponen penting dari keausan dan korosi dengan berbagai jenis'
+    }
 ]
 export const automotiveProducts = [
     {

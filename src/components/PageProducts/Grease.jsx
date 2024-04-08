@@ -44,9 +44,13 @@ export const Grease = () => {
           </div>
         </div>
         <GreaseList />
-        <Product />
-        <Footer />
-        <CopyRights />
+        <div className="mt-[5rem]">
+          <Product />
+        </div>
+        <div className="mt-[20rem]">
+          <Footer />
+          <CopyRights />
+        </div>
       </div>
     </>
   );
