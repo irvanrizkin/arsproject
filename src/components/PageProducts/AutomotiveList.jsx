@@ -6,22 +6,53 @@ import {
   gasEngineOil,
   transmissionGearOil,
 } from "../../constant";
+import { IoIosArrowBack, IoIosArrowForward, IoIosClose } from "react-icons/io";
 
 export const AutomotiveList = () => {
   const [selected, setSelected] = useState(automotiveProducts[0]);
   const [currentList, setCurrentList] = useState(marineOil);
+  const [appear, setAppear] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const handleProductChange = (productType) => {
-    if (productType === "Marine Oil") {
-      setCurrentList(marineOil);
-    } else if (productType === "Diesel Oil") {
-      setCurrentList(dieselOil);
-    } else if (productType === "Gas Engine Oil") {
-      setCurrentList(gasEngineOil);
-    } else if (productType === "Transmission & Gear Oil") {
-      setCurrentList(transmissionGearOil);
+    switch (productType) {
+      case "Marine Oil":
+        setCurrentList(marineOil);
+        break;
+      case "Diesel Oil":
+        setCurrentList(dieselOil);
+        break;
+      case "Gas Engine Oil":
+        setCurrentList(gasEngineOil);
+        break;
+      case "Transmission & Gear Oil":
+        setCurrentList(transmissionGearOil);
+        break;
+      default:
+        break;
     }
     setSelected(productType);
+  };
+
+  const handleDetailClick = (index) => {
+    setSelectedImageIndex(index);
+    setAppear(true);
+  };
+
+  const handlePopupScroll = (direction) => {
+    if (
+      direction === "forward" &&
+      selectedImageIndex < currentList.length - 1
+    ) {
+      setSelectedImageIndex((prev) => prev + 1);
+    } else if (direction === "backward" && selectedImageIndex > 0) {
+      setSelectedImageIndex((prev) => prev - 1);
+    }
+  };
+
+  const closeImagePopup = () => {
+    setAppear(false);
+    setSelectedImageIndex(null);
   };
 
   return (
@@ -43,11 +74,7 @@ export const AutomotiveList = () => {
             onChange={(e) => handleProductChange(e.target.value)}
           >
             {automotiveProducts.map((item, index) => (
-              <option
-                key={index}
-                value={item.type}
-                onChange={(e) => handleProductChange(e.target.value)}
-              >
+              <option key={index} value={item.type}>
                 {item.type}
               </option>
             ))}
@@ -80,13 +107,66 @@ export const AutomotiveList = () => {
                 <img src={item.img} alt="automotiveproduct" />
                 <div className="mt-3 px-3">
                   <div>{item.name}</div>
-                  <button className="text-primary">Detail Product</button>
+                  <button
+                    className="text-primary"
+                    onClick={() => handleDetailClick(index)}
+                  >
+                    Detail Product
+                  </button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Detail Product Popup */}
+      {appear && selectedImageIndex !== null && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="">
+            <div>Nama</div>
+            <div className="relative flex items-center justify-center h-[20rem] ">
+              <button
+                className="absolute left-[-6rem] m-4 text-white z-10 border-2 px-3 py-3 border-primary"
+                onClick={() => handlePopupScroll("backward")}
+              >
+                <IoIosArrowBack size={40} className="text-primary" />
+              </button>
+              <div className="max-h-[80vh] max-w-[80vw] object-contain z-0 flex">
+                {currentList.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`w-1/5 ${
+                      selectedImageIndex === index
+                        ? "bg-yellow-200"
+                        : "bg-gray-200"
+                    }`}
+                  >
+                    <img
+                      src={item.img}
+                      alt="popupImage"
+                      className="w-full h-32 object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+              <button
+                className="absolute right-[-6rem] m-4 text-white z-10 border-2 px-3 py-3 border-primary"
+                onClick={() => handlePopupScroll("forward")}
+              >
+                <IoIosArrowForward size={40} className="text-primary" />
+              </button>
+              <button className="absolute top-0 right-0 m-4 text-white z-10">
+                <IoIosClose
+                  size={40}
+                  onClick={closeImagePopup}
+                  className="text-primary rounded-full border-solid border-2 border-primary"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
