@@ -138,41 +138,53 @@ export const AutomotiveList = () => {
               </div>
             </div>
             <div
-              className="relative overflow-hidden py-3 "
+              className="relative overflow-hidden py-3"
               style={{ scrollBehavior: "smooth" }}
               ref={containerRef}
             >
               <div className="flex items-center justify-center">
-                {currentList.map((item, index) => (
-                  <div
-                    key={index}
-                    style={{ minWidth: "rem" }}
-                    className={`flex items-start justify-center ${
-                      selectedImageIndex === index
-                        ? "bg-yellow-200"
-                        : "bg-gray-200"
-                    }`}
-                  >
-                    <div className="px-5 py-5">
-                      <img src={item.img} alt="popupImage" />
+                {currentList.map((item, index) => {
+                  const offset = index - selectedImageIndex;
+                  let positionClass = "flex-2";
+
+                  if (offset === 0) positionClass = "flex-2";
+                  else if (offset === -1 || offset === 1)
+                    positionClass = "flex-1";
+                  else positionClass = "hidden";
+
+                  return (
+                    <div
+                      key={index}
+                      className={`h-full ${positionClass}  transition-all duration-300 ease-in-out`}
+                    >
+                      <img
+                        src={item.img}
+                        alt="popupImage"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
-
             <div className="bg-blue-200 flex justify-between">
               <div>Type</div>
               <div>
                 <button
                   className="m-2 text-white z-10 border-2 px-1 py-1 border-primary"
-                  onClick={() => handlePopupScroll("backward")}
+                  onClick={() => {
+                    handlePopupScroll("backward");
+                    containerRef.current.scrollLeft -= 200; // adjust the value as needed
+                  }}
                 >
                   <IoIosArrowBack size={40} className="text-primary" />
                 </button>
                 <button
                   className="m-2 text-white z-10 border-2 px-1 py-1 border-primary"
-                  onClick={() => handlePopupScroll("forward")}
+                  onClick={() => {
+                    handlePopupScroll("forward");
+                    containerRef.current.scrollLeft += 200; // adjust the value as needed
+                  }}
                 >
                   <IoIosArrowForward size={40} className="text-primary" />
                 </button>

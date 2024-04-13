@@ -220,7 +220,7 @@ export const marineOil = [
     },
     {
         name : "Cladium",
-        img : drumEni
+        img : diesel
     },
     {
         name : "Cludaim",
@@ -232,7 +232,7 @@ export const marineOil = [
     },
     {
         name : "Cludaim",
-        img : drumEni
+        img : multiTech
     },
 ]
 export const dieselOil = [
