@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   automotiveProducts,
   marineOil,
@@ -14,6 +14,18 @@ export const AutomotiveList = () => {
   const [currentList, setCurrentList] = useState(marineOil);
   const [appear, setAppear] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [carouselOffset, setCarouselOffset] = useState(0);
+
+  useEffect(() => {
+    if (appear && selectedImageIndex !== null) {
+      const offset = selectedImageIndex - 2;
+      if (offset >= 0) {
+        setCarouselOffset(offset);
+      } else {
+        setCarouselOffset(currentList.length + offset);
+      }
+    }
+  }, [appear, selectedImageIndex, currentList.length]);
 
   const handleProductChange = (productType) => {
     switch (productType) {
@@ -41,19 +53,19 @@ export const AutomotiveList = () => {
   };
 
   const handlePopupScroll = (direction) => {
-    if (
-      direction === "forward" &&
-      selectedImageIndex < currentList.length - 1
-    ) {
-      setSelectedImageIndex((prev) => prev + 1);
-    } else if (direction === "backward" && selectedImageIndex > 0) {
-      setSelectedImageIndex((prev) => prev - 1);
+    if (direction === "forward") {
+      setSelectedImageIndex((prev) => (prev + 1) % currentList.length);
+    } else if (direction === "backward") {
+      setSelectedImageIndex((prev) =>
+        prev === 0 ? currentList.length - 1 : prev - 1
+      );
     }
   };
 
   const closeImagePopup = () => {
     setAppear(false);
     setSelectedImageIndex(null);
+    setCarouselOffset(0);
   };
 
   return (
@@ -144,12 +156,12 @@ export const AutomotiveList = () => {
             >
               <div className="flex items-center justify-center">
                 {currentList.map((item, index) => {
-                  const offset = index - selectedImageIndex;
+                  const adjustedIndex =
+                    (index + carouselOffset) % currentList.length;
                   let positionClass = "flex-2";
 
-                  if (offset === 0) positionClass = "flex-2";
-                  else if (offset === -1 || offset === 1)
-                    positionClass = "flex-1";
+                  if (index === 2) positionClass = "flex-2";
+                  else if (index === 1 || index === 3) positionClass = "flex-1";
                   else positionClass = "hidden";
 
                   return (
@@ -158,7 +170,7 @@ export const AutomotiveList = () => {
                       className={`h-full ${positionClass}  transition-all duration-300 ease-in-out`}
                     >
                       <img
-                        src={item.img}
+                        src={currentList[adjustedIndex].img}
                         alt="popupImage"
                         className="w-full h-full object-contain"
                       />
