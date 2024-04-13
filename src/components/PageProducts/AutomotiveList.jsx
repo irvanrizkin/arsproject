@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   automotiveProducts,
   marineOil,
@@ -9,6 +9,7 @@ import {
 import { IoIosArrowBack, IoIosArrowForward, IoIosClose } from "react-icons/io";
 
 export const AutomotiveList = () => {
+  const containerRef = useRef(null);
   const [selected, setSelected] = useState(automotiveProducts[0]);
   const [currentList, setCurrentList] = useState(marineOil);
   const [appear, setAppear] = useState(false);
@@ -123,46 +124,67 @@ export const AutomotiveList = () => {
       {/* Detail Product Popup */}
       {appear && selectedImageIndex !== null && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="">
-            <div>Nama</div>
-            <div className="relative flex items-center justify-center h-[20rem] ">
-              <button
-                className="absolute left-[-6rem] m-4 text-white z-10 border-2 px-3 py-3 border-primary"
-                onClick={() => handlePopupScroll("backward")}
-              >
-                <IoIosArrowBack size={40} className="text-primary" />
-              </button>
-              <div className="max-h-[80vh] max-w-[80vw] object-contain z-0 flex">
+          <div className="bg-white w-[40rem] relative py-2 px-3">
+            <div className="flex bg-green-300 justify-between">
+              <div>Nama</div>
+              <div>
+                <button className="m-4 text-white z-10">
+                  <IoIosClose
+                    size={40}
+                    onClick={closeImagePopup}
+                    className="text-primary rounded-full border-solid border-2 border-primary"
+                  />
+                </button>
+              </div>
+            </div>
+            <div
+              className="relative overflow-hidden py-3 "
+              style={{ scrollBehavior: "smooth" }}
+              ref={containerRef}
+            >
+              <div className="flex items-center justify-center">
                 {currentList.map((item, index) => (
                   <div
                     key={index}
-                    className={`w-1/5 ${
+                    style={{ minWidth: "rem" }}
+                    className={`flex items-start justify-center ${
                       selectedImageIndex === index
                         ? "bg-yellow-200"
                         : "bg-gray-200"
                     }`}
                   >
-                    <img
-                      src={item.img}
-                      alt="popupImage"
-                      className="w-full h-32 object-contain"
-                    />
+                    <div className="px-5 py-5">
+                      <img src={item.img} alt="popupImage" />
+                    </div>
                   </div>
                 ))}
               </div>
-              <button
-                className="absolute right-[-6rem] m-4 text-white z-10 border-2 px-3 py-3 border-primary"
-                onClick={() => handlePopupScroll("forward")}
-              >
-                <IoIosArrowForward size={40} className="text-primary" />
-              </button>
-              <button className="absolute top-0 right-0 m-4 text-white z-10">
-                <IoIosClose
-                  size={40}
-                  onClick={closeImagePopup}
-                  className="text-primary rounded-full border-solid border-2 border-primary"
-                />
-              </button>
+            </div>
+
+            <div className="bg-blue-200 flex justify-between">
+              <div>Type</div>
+              <div>
+                <button
+                  className="m-2 text-white z-10 border-2 px-1 py-1 border-primary"
+                  onClick={() => handlePopupScroll("backward")}
+                >
+                  <IoIosArrowBack size={40} className="text-primary" />
+                </button>
+                <button
+                  className="m-2 text-white z-10 border-2 px-1 py-1 border-primary"
+                  onClick={() => handlePopupScroll("forward")}
+                >
+                  <IoIosArrowForward size={40} className="text-primary" />
+                </button>
+              </div>
+            </div>
+            <div>MU</div>
+            <div className="text-greys">
+              Selamat datang di PT. Anugerah Rapri Sejahtera, sebuah perusahaan
+              yang berkomitmen dalam menyediakan solusi terbaik untuk kebutuhan
+              industri perminyakan, transportasi laut, dan sektor-sektor terkait
+              lainnya. Sebagai distributor terkemuka, kami menyediakan beragam
+              produk berkualitas tinggi
             </div>
           </div>
         </div>
