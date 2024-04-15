@@ -158,16 +158,22 @@ export const AutomotiveList = () => {
                 {currentList.map((item, index) => {
                   const adjustedIndex =
                     (index + carouselOffset) % currentList.length;
-                  let positionClass = "flex-2";
+                  let positionClass = "flex-1"; // Set semua gambar menjadi flex-1 awalnya
 
-                  if (index === 2) positionClass = "flex-2";
-                  else if (index === 1 || index === 3) positionClass = "flex-1";
-                  else positionClass = "hidden";
+                  if (index === 2) {
+                    positionClass = "flex-2 items-center justify-center"; // Gambar di tengah
+                  } else if (index < 2) {
+                    positionClass = "flex-1";
+                  } else if (index > 2 && index <= 4) {
+                    positionClass = "flex-1";
+                  } else {
+                    positionClass = "flex-1 hidden";
+                  }
 
                   return (
                     <div
                       key={index}
-                      className={`h-full ${positionClass}  transition-all duration-300 ease-in-out`}
+                      className={`h-full ${positionClass} transition-all duration-300 ease-in-out`}
                     >
                       <img
                         src={currentList[adjustedIndex].img}

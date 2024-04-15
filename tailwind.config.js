@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         'primary': '#f98801',
         'greys' : '#b3b6ba'
+      },
+      fontFamily : {
+        headLine : ['Plus Jakarta Sans', 'sans-serif']
       }
     },
     screens: {
