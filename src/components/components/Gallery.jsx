@@ -8,6 +8,7 @@ export const Gallery = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const handleScroll = (direction) => {
+    console.log("Handle scroll called with direction:", direction);
     const scrollAmount = 400; // Ubah sesuai kebutuhan Anda
     const container = containerRef.current;
 

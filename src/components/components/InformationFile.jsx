@@ -26,7 +26,7 @@ export const InformationFile = () => {
 
   return (
     <>
-      <div className=" relative pb-[6rem] flex flex-col desktop:flex-row desktop:px-[4rem] widescreen:mt-[6rem]">
+      <div className=" relative pb-[6rem] mt-[4rem] flex flex-col desktop:flex-row desktop:px-[4rem] widescreen:mt-[6rem]">
         <div className="mt-[6rem] px-5 desktop:w-[42rem] desktop:mt-[2.5rem] widescreen:w-[35rem] widescreen:px-[5rem]">
           <div className="text-primary widescreen:text-2xl">Laporan</div>
           <div className="text-2xl widescreen:text-4xl font-semibold widescreen:mt-2">

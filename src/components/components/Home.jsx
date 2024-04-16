@@ -4,12 +4,12 @@ import { CopyRights } from "../Footer/CopyRights";
 
 import { Footer } from "../Footer/Footer";
 import { Gallery } from "./Gallery";
-import { GuideLines } from "./GuideLines";
 import { InformationFile } from "./InformationFile";
 import { Notes } from "./Notes";
 import { Portfolio } from "./Portfolio";
 import { Product } from "./Product";
 import { Quotes } from "./Quotes";
+import { Guide } from "./Guide";
 
 export const Home = () => {
   return (
@@ -19,7 +19,7 @@ export const Home = () => {
       <Portfolio />
       <Product />
       <Quotes />
-      <GuideLines />
+      <Guide />
       <InformationFile />
       <Notes />
       <Gallery />

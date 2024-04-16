@@ -117,7 +117,7 @@ export const AutomotiveList = () => {
           <div className=" grid grid-cols-2 gap-8 desktop:grid-cols-3">
             {currentList.map((item, index) => (
               <div
-                className="flex flex-col py-4 shadow-xl w-[15rem]"
+                className="flex flex-col py-4 shadow-xl desktop:w-[15rem]"
                 key={index}
               >
                 <img src={item.img} alt="automotiveproduct" />
@@ -140,7 +140,7 @@ export const AutomotiveList = () => {
       {appear && selectedImageIndex !== null && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white w-[40rem] relative py-2 px-3">
-            <div className="flex bg-green-300 justify-between">
+            <div className="flex justify-between">
               <div>Nama</div>
               <div>
                 <button className="m-4 text-white z-10">
@@ -161,15 +161,15 @@ export const AutomotiveList = () => {
                 {currentList.map((item, index) => {
                   const adjustedIndex =
                     (index + carouselOffset) % currentList.length;
-                  let positionClass = "flex-1"; // Set semua gambar menjadi flex-1 awalnya
+                  let positionClass = "flex-1";
 
                   if (index === 2) {
                     positionClass =
-                      "flex-2 items-center justify-center bg-yellow-300 h-[10rem]"; // Gambar di tengah
+                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[10rem]";
                   } else if (index < 2) {
-                    positionClass = "flex-1 bg-greys h-[5rem]";
+                    positionClass = "flex-1 bg-greys ml-2 mr-2 ";
                   } else if (index > 2 && index <= 4) {
-                    positionClass = "flex-1 bg-greys";
+                    positionClass = "flex-1 bg-greys ml-2 mr-2";
                   } else {
                     positionClass = "flex-1 hidden";
                   }
@@ -177,19 +177,24 @@ export const AutomotiveList = () => {
                   return (
                     <div
                       key={index}
-                      className={`h-full ${positionClass} transition-all duration-300 ease-in-out`}
+                      className={`h-full min-w-[9.5rem] min-h-[8rem] flex justify-center items-center space-x-2 gap-3  ${positionClass} transition-all duration-300 ease-in-out`}
                     >
                       <img
                         src={currentList[adjustedIndex].img}
                         alt="popupImage"
                         className="w-full h-full object-contain"
+                        style={
+                          index === 2
+                            ? { maxHeight: "10rem", maxWidth: "100%" }
+                            : { maxHeight: "5rem", maxWidth: "100%" }
+                        }
                       />
                     </div>
                   );
                 })}
               </div>
             </div>
-            <div className="bg-blue-200 flex justify-between">
+            <div className=" flex justify-between">
               <div>Type</div>
               <div>
                 <button
