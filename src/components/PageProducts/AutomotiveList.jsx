@@ -114,9 +114,12 @@ export const AutomotiveList = () => {
               Terdepan dalam menyediakan Automotive
             </div>
           </div>
-          <div className=" grid grid-cols-2 gap-4 desktop:grid-cols-4">
+          <div className=" grid grid-cols-2 gap-8 desktop:grid-cols-3">
             {currentList.map((item, index) => (
-              <div className="flex flex-col py-4 shadow-xl" key={index}>
+              <div
+                className="flex flex-col py-4 shadow-xl w-[15rem]"
+                key={index}
+              >
                 <img src={item.img} alt="automotiveproduct" />
                 <div className="mt-3 px-3">
                   <div>{item.name}</div>
@@ -154,18 +157,19 @@ export const AutomotiveList = () => {
               style={{ scrollBehavior: "smooth" }}
               ref={containerRef}
             >
-              <div className="flex items-center justify-center">
+              <div className="flex items-center overflow-hidden justify-center">
                 {currentList.map((item, index) => {
                   const adjustedIndex =
                     (index + carouselOffset) % currentList.length;
                   let positionClass = "flex-1"; // Set semua gambar menjadi flex-1 awalnya
 
                   if (index === 2) {
-                    positionClass = "flex-2 items-center justify-center"; // Gambar di tengah
+                    positionClass =
+                      "flex-2 items-center justify-center bg-yellow-300 h-[10rem]"; // Gambar di tengah
                   } else if (index < 2) {
-                    positionClass = "flex-1";
+                    positionClass = "flex-1 bg-greys h-[5rem]";
                   } else if (index > 2 && index <= 4) {
-                    positionClass = "flex-1";
+                    positionClass = "flex-1 bg-greys";
                   } else {
                     positionClass = "flex-1 hidden";
                   }
