@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   industrialProduct,
   hydraulicOil,
@@ -11,10 +11,26 @@ import {
   compressorOil,
   turbineOil,
 } from "../../constant";
+import { PopupDetails } from "../components/PopupDetails";
 
 export const IndustrialList = () => {
+  const containerRef = useRef(null);
   const [selected, setSelected] = useState(industrialProduct[0]);
   const [currentList, setCurrentList] = useState(hydraulicOil);
+  const [appear, setAppear] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [carouselOffset, setCarouselOffset] = useState(0);
+
+  useEffect(() => {
+    if (appear && selectedImageIndex !== null) {
+      const offset = selectedImageIndex - 2;
+      if (offset >= 0) {
+        setCarouselOffset(offset);
+      } else {
+        setCarouselOffset(currentList.length + offset);
+      }
+    }
+  }, [appear, selectedImageIndex, currentList.length]);
 
   const handleProductChange = (productType) => {
     if (productType === "Hydraulic Oil") {
@@ -33,6 +49,26 @@ export const IndustrialList = () => {
     setSelected(productType);
   };
 
+  const handleDetailClick = (index) => {
+    setSelectedImageIndex(index);
+    setAppear(true);
+  };
+
+  const handlePopupScroll = (direction) => {
+    if (direction === "forward") {
+      setSelectedImageIndex((prev) => (prev + 1) % currentList.length);
+    } else if (direction === "backward") {
+      setSelectedImageIndex((prev) =>
+        prev === 0 ? currentList.length - 1 : prev - 1
+      );
+    }
+  };
+
+  const closeImagePopup = () => {
+    setAppear(false);
+    setSelectedImageIndex(null);
+    setCarouselOffset(0);
+  };
   return (
     <>
       <div className="mt-[5rem] px-5 desktop:px-[6rem] flex flex-col desktop:flex-row space-y-5">
@@ -89,13 +125,32 @@ export const IndustrialList = () => {
                 <img src={item.img} alt="automotiveproduct" />
                 <div className="mt-3 px-3">
                   <div>{item.name}</div>
-                  <button className="text-primary">Detail Product</button>
+                  <button
+                    className="text-primary"
+                    onClick={() => handleDetailClick(index)}
+                  >
+                    Detail Product
+                  </button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+      {/* Detail Product Popup */}
+      <PopupDetails
+        appear={appear}
+        selected={selected}
+        currentList={currentList}
+        setSelected={setSelected}
+        setSelectedImageIndex={setSelectedImageIndex}
+        setAppear={setAppear}
+        handlePopupScroll={handlePopupScroll}
+        closeImagePopup={closeImagePopup}
+        containerRef={containerRef}
+        selectedImageIndex={selectedImageIndex}
+        carouselOffset={carouselOffset}
+      />
     </>
   );
 };

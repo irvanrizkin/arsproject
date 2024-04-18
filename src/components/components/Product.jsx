@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { listListProduct } from "../../constant";
 
@@ -8,7 +8,18 @@ import backProduct from "../../assets/backProduct.png";
 export const Product = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate(); // tambahkan ini
   const path = location.pathname;
+
+  const handleProductClick = (name) => {
+    if (name.toLowerCase() === "industrial") {
+      navigate("/industrial");
+    } else if (name.toLowerCase() === "automotive") {
+      navigate("/automotive");
+    } else if (name.toLowerCase() === "greases") {
+      navigate("/greases");
+    }
+  };
 
   return (
     <div
@@ -44,6 +55,7 @@ export const Product = () => {
                 className="desktop:w-[40%] bg-white border-b-[0.5rem] hover:border-[#f98801] hover:cursor-pointer border-white ease-in-out duration-500 shadow-xl overflow-hidden flex flex-col"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => handleProductClick(info.name)}
               >
                 <div className="flex justify-center items-center">
                   <img

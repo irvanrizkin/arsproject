@@ -7,6 +7,7 @@ import {
   transmissionGearOil,
 } from "../../constant";
 import { IoIosArrowBack, IoIosArrowForward, IoIosClose } from "react-icons/io";
+import { PopupDetails } from "../components/PopupDetails";
 
 export const AutomotiveList = () => {
   const containerRef = useRef(null);
@@ -137,11 +138,24 @@ export const AutomotiveList = () => {
       </div>
 
       {/* Detail Product Popup */}
-      {appear && selectedImageIndex !== null && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white w-[40rem] relative py-2 px-3">
+      <PopupDetails
+        appear={appear}
+        selected={selected}
+        currentList={currentList}
+        setSelected={setSelected}
+        setSelectedImageIndex={setSelectedImageIndex}
+        setAppear={setAppear}
+        handlePopupScroll={handlePopupScroll}
+        closeImagePopup={closeImagePopup}
+        containerRef={containerRef}
+        selectedImageIndex={selectedImageIndex}
+        carouselOffset={carouselOffset}
+      />
+      {/* {appear && selectedImageIndex !== null && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white w-[40rem] relative py-2 px-3 z-50">
             <div className="flex justify-between">
-              <div>Nama</div>
+              <div>{selected}</div>
               <div>
                 <button className="m-4 text-white z-10">
                   <IoIosClose
@@ -163,9 +177,17 @@ export const AutomotiveList = () => {
                     (index + carouselOffset) % currentList.length;
                   let positionClass = "flex-1";
 
-                  if (index === 2) {
+                  if (currentList.length === 1) {
                     positionClass =
-                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[10rem]";
+                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[11rem] min-w-[12rem]";
+                  } else if (currentList.length === 2) {
+                    positionClass =
+                      index === 0
+                        ? "flex-2 items-center justify-end bg-yellow-300 p-2 min-h-[11rem] min-w-[12rem] mr-2"
+                        : "flex-2 items-center justify-start bg-greys p-2 min-h-[11rem] min-w-[12rem] ml-2";
+                  } else if (index === 2) {
+                    positionClass =
+                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[11rem] min-w-[12rem]";
                   } else if (index < 2) {
                     positionClass = "flex-1 bg-greys ml-2 mr-2 ";
                   } else if (index > 2 && index <= 4) {
@@ -195,7 +217,9 @@ export const AutomotiveList = () => {
               </div>
             </div>
             <div className=" flex justify-between">
-              <div>Type</div>
+              <div>
+                {selectedImageIndex + 1}/{currentList.length}
+              </div>{" "}
               <div>
                 <button
                   className="m-2 text-white z-10 border-2 px-1 py-1 border-primary"
@@ -217,7 +241,7 @@ export const AutomotiveList = () => {
                 </button>
               </div>
             </div>
-            <div>MU</div>
+            <div>{currentList[selectedImageIndex]?.name}</div>{" "}
             <div className="text-greys">
               Selamat datang di PT. Anugerah Rapri Sejahtera, sebuah perusahaan
               yang berkomitmen dalam menyediakan solusi terbaik untuk kebutuhan
@@ -227,7 +251,7 @@ export const AutomotiveList = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };
