@@ -18,9 +18,11 @@ export const PopupDetails = ({
     <>
       {appear && selectedImageIndex !== null && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white w-[40rem] relative py-2 px-3 z-50">
+          <div className="bg-white w-[47rem] relative py-2 px-3 z-50">
             <div className="flex justify-between">
-              <div>{selected.type || selected}</div>
+              <div className="text-3xl pt-5 pl-2 font-headLine">
+                {selected.type || selected}
+              </div>
               <div>
                 <button className="m-4 text-white z-10">
                   <IoIosClose
@@ -44,15 +46,15 @@ export const PopupDetails = ({
 
                   if (currentList.length === 1) {
                     positionClass =
-                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[11rem] min-w-[12rem]";
+                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[12rem] min-w-[12rem] flex-grow";
                   } else if (currentList.length === 2) {
                     positionClass =
                       index === 0
-                        ? "flex-2 items-center justify-end bg-yellow-300 p-2 min-h-[11rem] min-w-[12rem] mr-2"
-                        : "flex-2 items-center justify-start bg-greys p-2 min-h-[11rem] min-w-[12rem] ml-2";
+                        ? "flex-2 items-center justify-end bg-yellow-300 p-2 min-h-[11.5rem] min-w-[14rem] mr-2 "
+                        : "flex-2 items-center justify-start bg-greys p-2 min-h-[11rem] min-w-[14rem] ml-2";
                   } else if (index === 2) {
                     positionClass =
-                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[11rem] min-w-[12rem]";
+                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[12rem] min-w-[14rem] flex-grow";
                   } else if (index < 2) {
                     positionClass = "flex-1 bg-greys ml-2 mr-2 ";
                   } else if (index > 2 && index <= 4) {
@@ -69,7 +71,7 @@ export const PopupDetails = ({
                       <img
                         src={currentList[adjustedIndex].img}
                         alt="popupImage"
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain "
                         style={
                           index === 2
                             ? { maxHeight: "10rem", maxWidth: "100%" }

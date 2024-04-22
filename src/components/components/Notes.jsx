@@ -10,7 +10,7 @@ export const Notes = () => {
         >
           <div className="absolute px-4 bottom-[-10rem] desktop:px-0 desktop:top-[-3rem] desktop:right-0 flex flex-col desktop:w-[35rem] widescreen:w-[59rem] ">
             <div className="bg-white text-black px-6 desktop:px-[4rem] rounded-xl py-5 space-y-5 desktop:h-[42rem] widescreen:px-[8rem] widescreen:py-[5rem] ">
-              <div className="border-b-2 pb-10 text-2xl desktop:font-semibold widescreen:text-4xl">
+              <div className="border-b-2 pb-10 text-2xl desktop:font-semibold widescreen:text-4xl font-headLine">
                 Pertambangan adalah industri untuk hari ini dan besok. Disini,
                 kami sudah menyediakan bahan dan pekerjaan yang penting untuk
                 masa depan dan kami melihat peluang yang jelas untuk menggunakan
