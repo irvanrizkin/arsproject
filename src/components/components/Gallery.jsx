@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { ourGallery } from "../../constant";
 import { IoIosArrowForward, IoIosArrowBack, IoIosClose } from "react-icons/io";
+import { MdFullscreen } from "react-icons/md";
 
 export const Gallery = () => {
   const containerRef = useRef(null);
@@ -65,11 +66,16 @@ export const Gallery = () => {
             {ourGallery.map((item, index) => (
               <div
                 key={index}
-                className="m-5 min-w-[15rem] desktop:min-w-[40rem] cursor-pointer relative"
+                className="group relative m-5 min-w-[15rem] desktop:min-w-[40rem] cursor-pointer"
                 onClick={() => openImagePopup(index)}
               >
+                <div className="absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-50 rounded-lg"></div>
                 <div className="">
-                  <img src={item.img} alt="guideListImage" />
+                  <img src={item.img} alt="guideListImage" className="w-full" />
+                </div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-headLine px-4 py-2 rounded-lg opacity-0 transition-opacity duration-300 z-10 group-hover:opacity-100 hover:bg-secondary flex flex-col justify-center items-center">
+                  <MdFullscreen size={30} />
+                  <p>View Image</p>
                 </div>
               </div>
             ))}
@@ -92,7 +98,7 @@ export const Gallery = () => {
       </div>
       {/* Popup Gambar */}
       {appear && selectedImageIndex !== null && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-20">
           <div className="relative flex items-center justify-center">
             <button
               className="absolute left-[-6rem] m-4 text-white z-10 border-2 px-3 py-3 border-primary"
