@@ -7,7 +7,7 @@ export const PageContact = () => {
     <div>
       <div
         style={{ backgroundImage: `url(${bgContact})` }}
-        className="w-full h-[25rem] px-5 widescreen:px-[10rem] relative"
+        className="w-full h-[25rem] px-5 widescreen:px-[10rem] relative font-headLine"
       >
         <div className="w-[full] relative">
           <div className="absolute bg-white w-full mt-[20rem] px-7 py-8 rounded-xl shadow-xl">

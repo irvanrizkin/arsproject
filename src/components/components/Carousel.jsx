@@ -20,7 +20,7 @@ export const Carousel = () => {
 
   return (
     <>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden font-headLine">
         <div
           className="flex transition-transform duration-1000 ease-in-out"
           style={{

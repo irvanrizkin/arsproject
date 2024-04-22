@@ -19,7 +19,7 @@ export const Automotive = () => {
 
   return (
     <>
-      <div>
+      <div className="font-headLine">
         <div
           style={{
             backgroundImage: `url(${bgProduct})`,

@@ -11,7 +11,7 @@ export const PageAbout = () => {
         style={{ backgroundImage: `url(${bgAbout})` }}
         className="w-full h-[25rem] px-5 widescreen:px-[10rem] relative"
       >
-        <div className="w-[full] relative">
+        <div className="w-[full] relative font-headLine">
           <div className="absolute bg-white w-full mt-[20rem] px-7 py-8 rounded-xl shadow-xl">
             <div className="text-primary">Tentang Kami</div>
             <div className="text-4xl font-semibold">

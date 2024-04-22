@@ -4,17 +4,17 @@ import { LuPhone } from "react-icons/lu";
 export const Forms = () => {
   return (
     <>
-      <div className="mt-[18rem] px-5 flex flex-col desktop:flex-row space-y-5">
+      <div className="mt-[18rem] px-5 flex flex-col desktop:flex-row space-y-5 font-headLine">
         <div className="py-5 text-greys px-5 shadow-xl desktop:shadow-none desktop:border-r-4 desktop:border-primary desktop:w-[40%] desktop:h-[18rem]">
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 widescreen:space-x-8">
             <MdOutlineMail size={30} />
             <div>office@anugerahraprisejahtera.com</div>
           </div>
-          <div className="flex space-x-4 mt-6">
+          <div className="flex space-x-4 widescreen:space-x-8 mt-6">
             <MdOutlineMail size={30} />
             <div>sales@anugerahraprisejahtera.com</div>
           </div>
-          <div className="flex space-x-4 mt-6">
+          <div className="flex space-x-4 widescreen:space-x-8 mt-6">
             <LuPhone size={30} />
             <div>021-27847161</div>
           </div>

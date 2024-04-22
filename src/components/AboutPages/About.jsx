@@ -2,7 +2,7 @@ import companyVideo from "../../assets/companyVideo.svg";
 
 export const About = () => {
   return (
-    <div className="px-5 desktop:py-[10rem] ">
+    <div className="px-5 desktop:py-[10rem] font-headLine ">
       <div className="flex flex-col desktop:flex-row-reverse ">
         <div className="desktop:w-[50%] desktop:px-6 desktop:py-[2rem] widescreen:px-[6rem]">
           <div className="text-primary mt-[16rem] desktop:mt-0 font-semibold">

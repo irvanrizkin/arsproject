@@ -71,7 +71,7 @@ export const AutomotiveList = () => {
 
   return (
     <>
-      <div className="mt-[5rem] px-5 desktop:px-[6rem] flex flex-col desktop:flex-row space-y-5">
+      <div className="mt-[5rem] px-5 desktop:px-[6rem] flex flex-col desktop:flex-row space-y-5 font-headLine">
         <div>
           <div className="tablet:hidden">
             <div className="text-primary">Automotive Product</div>

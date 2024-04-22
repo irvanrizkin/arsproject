@@ -4,7 +4,7 @@ import listIcon from "../../assets/listIcon.svg";
 export const VisiMisi = () => {
   return (
     <div>
-      <div className="bg-[#061d29] mt-6 relative">
+      <div className="bg-[#061d29] mt-6 relative font-headLine">
         <div className="text-white px-5 py-[5rem]  relative flex flex-col desktop:flex-row">
           <div className=" ">
             <div className="tablet:flex justify-center items-center">

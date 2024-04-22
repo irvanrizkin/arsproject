@@ -2,7 +2,7 @@ import logoColor from "../../assets/logoWarna.png";
 import mapsLocation from "../../assets/mapsLocation.svg";
 export const Footer = () => {
   return (
-    <div className="bg-[#fef2e6] mt-[12rem] py-10 px-4 flex desktop:flex-row flex-col desktop:px-[2rem] widescreen:px-[6rem]">
+    <div className="bg-[#fef2e6] mt-[12rem] py-10 px-4 flex desktop:flex-row flex-col desktop:px-[2rem] widescreen:px-[6rem] font-headLine">
       <div className=" flex flex-col desktop:w-[16rem] desktop:pr-[1rem] widescreen:pr-[7.5rem] desktop:mt-8 widescreen:mt-0 widescreen:w-[20rem]">
         <div>
           <img src={logoColor} alt="logo" />
