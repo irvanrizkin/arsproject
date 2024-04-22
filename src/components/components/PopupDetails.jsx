@@ -18,7 +18,7 @@ export const PopupDetails = ({
     <>
       {appear && selectedImageIndex !== null && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white w-[48rem] relative py-2 px-3 z-50">
+          <div className="bg-white w-[20rem] tablet:w-[41rem] widescreen:w-[48rem] relative py-2 px-3 z-50">
             <div className="flex justify-between">
               <div className="text-3xl pt-5 pl-2 font-headLine font-semibold">
                 {selected.type || selected}
@@ -50,11 +50,11 @@ export const PopupDetails = ({
                   } else if (currentList.length === 2) {
                     positionClass =
                       index === 0
-                        ? "flex-2 items-center justify-end bg-yellow-300 p-2 min-h-[11.5rem] min-w-[14rem] mr-2 "
-                        : "flex-2 items-center justify-start bg-[#f1f5f9] p-2 min-h-[11rem] min-w-[14rem] ml-2";
+                        ? "flex-2 items-center justify-end bg-yellow-300 p-2 min-h-[8rem] min-w-[9rem] desktop:min-h-[11.5rem] desktop:min-w-[14rem] mr-2 "
+                        : "flex-2 items-center justify-start bg-[#f1f5f9] p-2 min-h-[6rem] min-w-[8rem] desktop:min-h-[11rem] desktop:min-w-[14rem] ml-2";
                   } else if (index === 2) {
                     positionClass =
-                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[12rem] min-w-[14rem] flex-grow";
+                      "flex-2 items-center justify-center bg-yellow-300 p-2 min-h-[9rem] min-w-[9rem] desktop:min-h-[12rem] desktop:min-w-[14rem] flex-grow";
                   } else if (index < 2) {
                     positionClass = "flex-1 bg-[#f1f5f9] ml-2 mr-2 ";
                   } else if (index > 2 && index <= 4) {
