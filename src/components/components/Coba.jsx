@@ -40,6 +40,13 @@ export const Coba = () => {
     };
   });
 
+  const handleId = () => {
+    console.log("Translate Indonesia");
+  };
+
+  const handleEn = () => {
+    console.log("Translate English");
+  };
   return (
     <div>
       <div className="w-full fixed top-0 right-0 text-white mobile:bg-transparent  z-20">
@@ -123,7 +130,16 @@ export const Coba = () => {
               </button>
             </div>
           </nav>
-          <div className="mt-5 text-2xl ml-4 tablet:hidden ">
+          <div className="mt-5 text-2xl ml-4 tablet:hidden flex space-x-5">
+            {navbar ? (
+              ""
+            ) : (
+              <div className="pt-2 space-x-2">
+                <button onClick={() => handleId()}>ID</button>
+                <span>|</span>
+                <button onClick={() => handleEn()}>EN</button>
+              </div>
+            )}
             <button onClick={() => setNavbar(!navbar)}>
               {navbar ? "" : <GiHamburgerMenu size={30} />}
             </button>

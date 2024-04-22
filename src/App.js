@@ -8,11 +8,12 @@ import { PageProduct } from './Pages/PageProduct';
 import { Automotive } from './components/PageProducts/Automotive';
 import { Industrial } from './components/PageProducts/Industrial';
 import { Grease } from './components/PageProducts/Grease';
+import { Navbar } from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <Coba/>
+      <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/about' element={<PageAbout/>}></Route>
