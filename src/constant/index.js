@@ -33,7 +33,7 @@ export const navItems = [{
 },
 {
     name : 'Produk',
-    path : '/automotive',
+    path : '',
     icon : <IoIosArrowDown/>
 
 },
@@ -151,7 +151,7 @@ export const specialityGrease = [
 export const hydraulicOil = [
     {
         name : "Arnica",
-        img : doubleEniDrums
+        img : drumEni
     },
     {
         name : "Oso",
